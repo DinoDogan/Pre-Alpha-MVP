@@ -95,8 +95,16 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+
+@import "../fonts/helveticaneue/index.css";
+
+@import "../fonts/avenirnextpro/index.css";
+
+@import "../fonts/bevan/index.css";
+
+
 html {
-    font-family: "Avenir Next";
+    font-family: "Helvetica Neue";
     font-size: 18px;
     height: 100%;
 }
@@ -158,6 +166,8 @@ section {
 
 #home {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 #home-background {
@@ -179,13 +189,26 @@ section {
     font-size: 200px;
     color: #fff;
     width: 33.33%;
-    text-align: center;
+
 }
 
 
+.cloud-upload {
+    text-align: left;
+}
 
+.cloud-upload > img {
+    width: 100%;
 
+}
 
+.cloud-arrow {
+    text-align: center;
+}
+
+.cloud-carousel {
+    text-align: right;
+}
 
 
 

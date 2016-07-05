@@ -3,7 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <Dino Dogan> -- <UX/UI> -- <@dinodogan>
 
 # THANKS
 
