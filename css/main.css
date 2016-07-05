@@ -126,6 +126,7 @@ section {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10000;
 }
 
 
@@ -155,16 +156,31 @@ section {
 
 }
 
-
-
 #home {
+    position: relative;
+}
+
+#home-background {
     background-image: url("../img/home-background.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -100px;
+    z-index: -1;
 }
 
 
+#call-to-action > div {
+    display: inline-block;
+    font-size: 200px;
+    color: #fff;
+    width: 33.33%;
+    text-align: center;
+}
 
 
 
