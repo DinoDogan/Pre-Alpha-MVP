@@ -1,3 +1,16 @@
+
+
+
+
+@import "../fonts/helveticaneue/index.css";
+
+@import "../fonts/avenirnextpro/index.css";
+
+@import "../fonts/bevan/index.css";
+
+
+
+
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -96,12 +109,6 @@ textarea {
    ========================================================================== */
 
 
-@import "../fonts/helveticaneue/index.css";
-
-@import "../fonts/avenirnextpro/index.css";
-
-@import "../fonts/bevan/index.css";
-
 
 html {
     font-family: "Helvetica Neue";
@@ -195,7 +202,6 @@ section {
 
 .cloud-upload {
     text-align: left;
-    z-index: 100;
 }
 
 /*.cloud-upload > img {*/
