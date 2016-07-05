@@ -12,6 +12,9 @@
 
 
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+@import url("/fonts/helveticaneue/index.css");
+@import "/fonts/avenirnextpro/index.css";
+@import url("/fonts/bevan/index.css");
 
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -113,6 +116,7 @@ textarea {
 html {
     font-family: "Helvetica Neue";
     font-size: 18px;
+    font-weight: 300;
     height: 100%;
 }
 
@@ -129,7 +133,6 @@ section {
 }
 
 
-
 .content {
     width: 90%;
     max-width: 900px;
@@ -144,6 +147,18 @@ section {
     left: 0;
     right: 0;
     z-index: 10000;
+
+    color: #fff;
+
+    -webkit-transition: color 1s ease, text-shadow 1s ease;
+    transition: color 1s ease, text-shadow 1s ease;
+
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#header a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -159,18 +174,19 @@ section {
     font-size: 39px;
 }
 
-
 #header-right {
     text-align: right;
-
 }
 
 #header-links > a {
     font-size: 1rem;
     display: inline-block;
     margin-left: 55px;
-    text-decoration: none;
+}
 
+#header.header--blue {
+    color: #000;
+    text-shadow: none;
 }
 
 #home {
@@ -224,16 +240,18 @@ section {
 }
 
 #faq {
-    font-size: 1rem;
-
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #004370;
 }
-
 
 .faq-question:before,
 .faq-answer:before {
     font-family: Bevan;
     font-size: 30px;
-    display: inline-block;
+
+    position: absolute;
+    top: -15px; left: 0;
 }
 
 .faq-question:before {
@@ -244,7 +262,14 @@ section {
     content: "A. ";
 }
 
+.faq-question, .faq-answer {
+    padding-left: 55px;
+    position: relative;
+}
 
+.faq-answer {
+    margin-bottom: 100px;
+}
 
 
 /* ==========================================================================
