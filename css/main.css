@@ -124,6 +124,8 @@ body {
 
 section {
     min-height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -173,8 +175,6 @@ section {
 
 #home {
     position: relative;
-    display: flex;
-    align-items: center;
 }
 
 #home-background {
@@ -218,6 +218,31 @@ section {
 }
 
 
+
+#about {
+    font-size: 1rem;
+}
+
+#faq {
+    font-size: 1rem;
+
+}
+
+
+.faq-question:before,
+.faq-answer:before {
+    font-family: Bevan;
+    font-size: 30px;
+    display: inline-block;
+}
+
+.faq-question:before {
+    content: "Q. ";
+}
+
+.faq-answer:before {
+    content: "A. ";
+}
 
 
 
