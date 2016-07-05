@@ -1,0 +1,6 @@
+@font-face {
+    font-family: Bevan;
+    src:
+            url('bevan-webfont.woff2') format('woff2'),
+            url('bevan-webfont.woff') format('woff');
+}

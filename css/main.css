@@ -195,12 +195,13 @@ section {
 
 .cloud-upload {
     text-align: left;
+    z-index: 10;
 }
 
-.cloud-upload > img {
-    width: 100%;
+/*.cloud-upload > img {*/
+    /*width: 100%;*/
 
-}
+/*}*/
 
 .cloud-arrow {
     text-align: center;
