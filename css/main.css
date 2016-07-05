@@ -195,7 +195,7 @@ section {
 
 .cloud-upload {
     text-align: left;
-    z-index: 10;
+    z-index: 100;
 }
 
 /*.cloud-upload > img {*/
