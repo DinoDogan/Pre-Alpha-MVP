@@ -219,6 +219,21 @@ section {
     text-align: left;
 }
 
+.cloud-upload-src > span {
+    position: relative;
+    display: inline-block;
+    font-size: .8rem;
+    left: 100px;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    line-height: 30px;
+    margin-top: -15px;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 /*.cloud-upload > img {*/
     /*width: 100%;*/
 
