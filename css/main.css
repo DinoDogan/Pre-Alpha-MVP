@@ -148,8 +148,8 @@ section {
 
     color: #ffffff;
 
-    -webkit-transition: color 1s ease, text-shadow 1s ease;
-    transition: color 1s ease, text-shadow 1s ease;
+    -webkit-transition: color 1s ease, text-shadow 1s ease, background-color 1s ease;
+    transition: color 1s ease, text-shadow 1s ease, background-color 1s ease;
 
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
@@ -157,6 +157,7 @@ section {
 #header.header--blue {
     color: #004370;
     text-shadow: none;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 #header a {
@@ -482,7 +483,7 @@ section {
 }
 
 #footer {
-
+    margin-top: -80px;
 }
 
 
