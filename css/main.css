@@ -1,14 +1,9 @@
-
-
-
-
+/* ==========================================================================
+   Font imports
+   ========================================================================== */
 @import "../fonts/helveticaneue/index.css";
-
 @import "../fonts/avenirnextpro/index.css";
-
 @import "../fonts/bevan/index.css";
-
-
 
 
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
@@ -169,9 +164,6 @@ section {
     color: inherit;
 }
 
-
-
-
 #header-left,
 #header-right {
     display: inline-block;
@@ -183,8 +175,6 @@ section {
     font-family: Bevan;
     font-size: 37px;
 }
-
-
 
 #header-right {
     text-align: right;
@@ -251,7 +241,7 @@ section {
 
 .cloud-carousel-inner {
     position: relative;
-    display: inline;
+    display: inline-block;
 }
 
 .cloud-carousel-dest {
@@ -263,6 +253,48 @@ section {
     top: 50%;
     line-height: 30px;
     margin-top: -15px;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cloud-carousel-dest > span {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cloud-carousel-dest > span > small {
+    display: block;
+    font-size: .7rem;
+    line-height: normal;
+}
+
+.cloud-carousel-btns {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 15px;
+}
+
+.cloud-carousel-btns > span {
+    display: inline-block;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+
+    width: 10px;
+    height: 10px;
+
+    -webkit-transition: background-color .3s ease, box-shadow .3s ease;
+    transition: background-color .3s ease, box-shadow .3s ease;
+
+    cursor: pointer;
+}
+
+.cloud-carousel-btns > span.is-active {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 #about {
