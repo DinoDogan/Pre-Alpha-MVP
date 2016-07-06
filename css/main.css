@@ -141,6 +141,7 @@ section {
 
 
 
+
 #header {
     position: fixed;
     top: 0;
@@ -148,7 +149,7 @@ section {
     right: 0;
     z-index: 10000;
 
-    color: #fff;
+    color: #ffffff;
 
     -webkit-transition: color 1s ease, text-shadow 1s ease;
     transition: color 1s ease, text-shadow 1s ease;
@@ -156,10 +157,19 @@ section {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+
+
+#header.header--blue {
+    color: #004370;
+    text-shadow: none;
+}
+
 #header a {
     text-decoration: none;
     color: inherit;
 }
+
+
 
 
 #header-left,
@@ -171,11 +181,14 @@ section {
 
 #logo {
     font-family: Bevan;
-    font-size: 39px;
+    font-size: 37px;
 }
+
+
 
 #header-right {
     text-align: right;
+    font-weight: 200;
 }
 
 #header-links > a {
@@ -184,10 +197,7 @@ section {
     margin-left: 55px;
 }
 
-#header.header--blue {
-    color: #000;
-    text-shadow: none;
-}
+
 
 #home {
     position: relative;
@@ -226,7 +236,8 @@ section {
 /*}*/
 
 .cloud-arrow {
-    text-align: center;
+    text-align: right;
+
 }
 
 .cloud-carousel {
@@ -248,7 +259,7 @@ section {
 .faq-question:before,
 .faq-answer:before {
     font-family: Bevan;
-    font-size: 30px;
+    font-size: 37px;
 
     position: absolute;
     top: -15px; left: 0;
