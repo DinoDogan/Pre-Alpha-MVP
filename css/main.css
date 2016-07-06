@@ -134,6 +134,11 @@ section {
     margin: 0 auto;
 }
 
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+
 #header {
     position: fixed;
     top: 0;
@@ -181,6 +186,11 @@ section {
     display: inline-block;
     margin-left: 47px;
 }
+
+/* ==========================================================================
+   Home Section
+   ========================================================================== */
+
 
 #home {
     position: relative;
@@ -300,11 +310,21 @@ section {
     background-color: rgba(255, 255, 255, 1);
 }
 
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+
+
 #about {
     font-size: 1.2rem;
     color: #004370;
 
 }
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+
 
 #faq {
     font-size: 1.1rem;
@@ -338,6 +358,117 @@ section {
 
 .faq-answer {
     margin-bottom: 100px;
+}
+
+/* ==========================================================================
+   Contact Section
+   ========================================================================== */
+
+
+#contact {}
+
+#contact-form {
+    position: relative;
+    display: block;
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
+    font: inherit;
+    font-size: 1.8rem;
+    color: #000;
+    margin: 8px 0;
+    padding: 10px 28px;
+    background: #fff;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus,
+#contact-form button:focus {
+    border-color: #004370;
+}
+
+#contact-form input {
+    width: 49%;
+    display: inline-block;
+}
+
+/* spacing for first input */
+#contact-form input:first-child {margin-right: 2%;}
+
+#contact-form textarea {
+    width: 100%;
+    height: 300px;
+    resize: both;
+}
+
+#contact-form button {
+    width: 100%;
+    background: #004370;
+    color: #fff;
+}
+
+#contact-form-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #fff;
+
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+#contact-form.has-success > #contact-form-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+#contact-form.has-success {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+}
+
+#contact-form-overlay > span {
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+
+    margin-top: -85px;
+}
+
+@-webkit-keyframes contact-form-overlay-icon {
+    0% {-webkit-transform: scale(0.8); opacity: 0;}
+    60% {-webkit-transform: scale(1.2);}
+    100% {-webkit-transform: scale(1);}
+}
+
+
+@keyframes contact-form-overlay-icon {
+    0% {transform: scale(0.8); opacity: 0;}
+    60% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+#contact-form-overlay > span > i {
+    color: #004370;
+    font-size: 60px;
+    display: block;
+    line-height: 100px; width: 100px;
+    border-radius: 50%;
+    background: #eee;
+    margin: 10px auto;
+}
+
+#contact-form.has-success > #contact-form-overlay > span > i {
+    -webkit-animation: contact-form-overlay-icon .5s ease;
+    animation: contact-form-overlay-icon .5s ease;
 }
 
 /* ==========================================================================

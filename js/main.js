@@ -23,62 +23,98 @@
     });
 
     // on page load do this:
-    $(window).trigger("resize");
+    $(window).trigger("resize").trigger("scroll");
 }());
 
 /**
  * Hero cloud carousel
  */
+
 (function () {
-    var $carouselItemsParent = $(".cloud-carousel-dest");
-    var $carouselItems = $carouselItemsParent.children();
 
-    var $carouselBtnsParent = $(".cloud-carousel-btns");
-    var $carouselBtns = [];
+    $(".cloud-carousel-inner").each(function () {
 
-    var currentPosition = 0;
-    var positionMax = $carouselItems.length - 1;
-    var timeout = "0";
+        var $this = $(this);
 
-    function goTo(newPosition) {
+        var $carouselItemsParent = $this.children(".cloud-carousel-dest");
+        var $carouselItems = $carouselItemsParent.children();
 
-        // clear active state of old button (corresponding to carousel item)
-        $carouselBtns.eq(currentPosition).removeClass("is-active");
+        var $carouselBtnsParent = $this.children(".cloud-carousel-btns");
+        var $carouselBtns = [];
 
-        var $carouselItem = $carouselItems.eq(newPosition);
+        var currentPosition = 0;
+        var positionMax = $carouselItems.length - 1;
+        var timeout = "0";
 
-        // add active state to new button (corresponding to carousel item)
-        $carouselBtns.eq(newPosition).addClass("is-active");
+        function goTo(newPosition) {
 
-        $carouselItemsParent.animate({
-            scrollLeft: $carouselItem.get(0).offsetLeft
-        }, 1200, "easeInOutExpo");
+            // clear active state of old button (corresponding to carousel item)
+            $carouselBtns.eq(currentPosition).removeClass("is-active");
 
-        currentPosition = newPosition;
+            var $carouselItem = $carouselItems.eq(newPosition);
 
-        timeout = setTimeout(function(){
-            var _position = currentPosition + 1;
+            // add active state to new button (corresponding to carousel item)
+            $carouselBtns.eq(newPosition).addClass("is-active");
 
-            if (_position > positionMax)
-                _position = 0;
+            $carouselItemsParent.animate({
+                scrollLeft: $carouselItem.get(0).offsetLeft
+            }, 1200, "easeInOutExpo");
 
-            goTo(_position);
-        }, 3000);
-    }
+            currentPosition = newPosition;
 
-    $carouselItems.each(function(i){
-        var $newBtn = $("<span>");
-        $carouselBtnsParent.append($newBtn);
+            timeout = setTimeout(function () {
+                var _position = currentPosition + 1;
 
-        $newBtn.click(function(){
-            clearTimeout(timeout);
-            goTo(i);
+                if (_position > positionMax)
+                    _position = 0;
+
+                goTo(_position);
+            }, 3000);
+        }
+
+        $carouselItems.each(function (i) {
+            var $newBtn = $("<span>");
+            $carouselBtnsParent.append($newBtn);
+
+            $newBtn.click(function () {
+                clearTimeout(timeout);
+                goTo(i);
+            });
         });
+
+        // update now that carousel btns are populated
+        $carouselBtns = $carouselBtnsParent.children();
+
+        // init
+        goTo(0);
+
     });
+}());
 
-    // update now that carousel btns are populated
-    $carouselBtns = $carouselBtnsParent.children();
+/**
+ * Contact page
+ */
+(function () {
+    var $contactForm = $("#contact-form");
 
-    // init
-    goTo(0);
+    $contactForm.submit(function (e) {
+
+        $.ajax({
+            method: $contactForm.attr("data-method"),
+            url: $contactForm.attr("data-action"),
+            dataType: "JSON",
+            data: $contactForm.serialize()
+        }).done(function (json) {
+            if (!json.error) {
+                $contactForm.addClass("has-success");
+            }
+            else {
+                alert(json.error);
+            }
+        }).error(function () {
+
+        });
+
+        e.preventDefault();
+    });
 }());
