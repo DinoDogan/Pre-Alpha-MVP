@@ -176,7 +176,7 @@ section {
 #header-right {
     display: inline-block;
     width: 50%;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 #logo {
@@ -194,7 +194,7 @@ section {
 #header-links > a {
     font-size: 1rem;
     display: inline-block;
-    margin-left: 55px;
+    margin-left: 47px;
 }
 
 
@@ -219,7 +219,6 @@ section {
 
 #call-to-action > div {
     display: inline-block;
-    font-size: 200px;
     color: #fff;
     width: 33.33%;
 
@@ -237,23 +236,47 @@ section {
 
 .cloud-arrow {
     text-align: right;
-
 }
+
+.cloud-arrow > img {
+    margin-top: -73px;
+}
+
+
 
 .cloud-carousel {
     text-align: right;
 }
 
 
+.cloud-carousel-inner {
+    position: relative;
+    display: inline;
+}
+
+.cloud-carousel-dest {
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    line-height: 30px;
+    margin-top: -15px;
+}
 
 #about {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: #004370;
+
+
 }
 
 #faq {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #004370;
+    margin-top: 100px;
 }
 
 .faq-question:before,
@@ -262,7 +285,7 @@ section {
     font-size: 37px;
 
     position: absolute;
-    top: -15px; left: 0;
+    top: -25px; left: 0;
 }
 
 .faq-question:before {
