@@ -57,7 +57,7 @@
         currentPosition = newPosition;
 
         timeout = setTimeout(function(){
-            var _position = currentPosition++;
+            var _position = currentPosition + 1;
 
             if (_position > positionMax)
                 _position = 0;

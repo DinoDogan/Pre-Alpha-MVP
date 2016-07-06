@@ -287,8 +287,8 @@ section {
     width: 10px;
     height: 10px;
 
-    -webkit-transition: background-color .3s ease, box-shadow .3s ease;
-    transition: background-color .3s ease, box-shadow .3s ease;
+    -webkit-transition: background-color 1.2s ease;
+    transition: background-color 1.2s ease;
 
     cursor: pointer;
 }
