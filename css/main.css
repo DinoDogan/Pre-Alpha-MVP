@@ -192,11 +192,12 @@ section {
    ========================================================================== */
 
 
-#home {
+#home,
+#footer-home {
     position: relative;
 }
 
-#home-background {
+.home-background {
     background-image: url("../img/home-background.jpg");
     background-repeat: no-repeat;
     background-position: top;
@@ -209,7 +210,7 @@ section {
     z-index: -1;
 }
 
-#call-to-action > div {
+.call-to-action > div {
     display: inline-block;
     color: #fff;
     width: 33.33%;
@@ -470,6 +471,57 @@ section {
     -webkit-animation: contact-form-overlay-icon .5s ease;
     animation: contact-form-overlay-icon .5s ease;
 }
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+#footer-home {
+
+}
+
+#footer {
+
+}
+
+
+#footer-links,
+#footer-social {
+    display: inline-block;
+    width: 50%;
+}
+
+#footer-links > a {
+    font-size: .6rem;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: 400;
+
+}
+
+#footer-social {
+    text-align: right;
+
+}
+
+#footer-social > a > i {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    line-height: 58px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+
+}
+
+
+
+
+
 
 /* ==========================================================================
    Helper classes
