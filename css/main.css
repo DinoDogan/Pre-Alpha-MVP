@@ -4,8 +4,6 @@
 @import "../fonts/helveticaneue/index.css";
 @import "../fonts/avenirnextpro/index.css";
 @import "../fonts/bevan/index.css";
-
-
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 @import url("/fonts/helveticaneue/index.css");
 @import "/fonts/avenirnextpro/index.css";
@@ -106,7 +104,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 html {
     font-family: "Helvetica Neue";
@@ -114,7 +115,6 @@ html {
     font-weight: 300;
     height: 100%;
 }
-
 
 body {
     font-size: 0;
@@ -125,17 +125,14 @@ section {
     min-height: 100%;
     display: flex;
     align-items: center;
+    padding: 200px 0;
 }
-
 
 .content {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
 }
-
-
-
 
 #header {
     position: fixed;
@@ -151,8 +148,6 @@ section {
 
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-
-
 
 #header.header--blue {
     color: #004370;
@@ -187,8 +182,6 @@ section {
     margin-left: 47px;
 }
 
-
-
 #home {
     position: relative;
 }
@@ -206,14 +199,12 @@ section {
     z-index: -1;
 }
 
-
 #call-to-action > div {
     display: inline-block;
     color: #fff;
     width: 33.33%;
 
 }
-
 
 .cloud-upload {
     text-align: left;
@@ -235,7 +226,7 @@ section {
 }
 
 /*.cloud-upload > img {*/
-    /*width: 100%;*/
+/*width: 100%;*/
 
 /*}*/
 
@@ -247,12 +238,9 @@ section {
     margin-top: -73px;
 }
 
-
-
 .cloud-carousel {
     text-align: right;
 }
-
 
 .cloud-carousel-inner {
     position: relative;
@@ -316,7 +304,6 @@ section {
     font-size: 1.2rem;
     color: #004370;
 
-
 }
 
 #faq {
@@ -332,7 +319,8 @@ section {
     font-size: 37px;
 
     position: absolute;
-    top: -25px; left: 0;
+    top: -25px;
+    left: 0;
 }
 
 .faq-question:before {
@@ -351,7 +339,6 @@ section {
 .faq-answer {
     margin-bottom: 100px;
 }
-
 
 /* ==========================================================================
    Helper classes
@@ -438,9 +425,9 @@ section {
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -457,8 +444,9 @@ section {
     *:first-letter,
     *:first-line {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
+        color: #000 !important;
+        /* Black prints faster:
+                                          http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
     }
@@ -480,7 +468,6 @@ section {
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
@@ -496,7 +483,6 @@ section {
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
