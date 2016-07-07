@@ -179,7 +179,7 @@ section {
 
 #header-right {
     text-align: right;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 #header-links > a {
@@ -511,11 +511,12 @@ section {
     font-size: 20px;
     color: white;
     display: inline-block;
-    line-height: 58px;
-    width: 60px;
-    text-align: center;
+    line-height: 28px;
+    width: 30px;
+    text-align: right;
     border-radius: 50%;
     border: 1px solid #fff;
+    margin: 20px;
 
 }
 
