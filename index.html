@@ -13,9 +13,9 @@
               crossorigin="anonymous">
 
         <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-              integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-              crossorigin="anonymous">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"-->
+        <!--integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"-->
+        <!--crossorigin="anonymous">-->
 
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -61,7 +61,7 @@
             <div class="home-background"></div>
                 <div class="call-to-action content">
                     <div class="cloud-upload">
-                        <div class="cloud-upload-src" data-toggle="modal" data-target="#mymodal">
+                        <div class="cloud-upload-src" data-toggle="modal" data-target="#upl-modal1">
                             <span>PDF</span>
 
                         <!--<img src="img/cloud-icon-active.png">-->
@@ -94,7 +94,7 @@
 
         <!-- Modal overlay section using Bootstrap-->
 
-        <div class="modal fade" id="mymodal" role="dialog">
+        <div class="modal fade" id="upl-modal1" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -103,11 +103,112 @@
                         <h4 class="modal-title">Upload to Magnificent</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Choose files to upload to Magnificent. You can select more than one file at a time.<br>You can also drag and drop files anywhere on this page to start uploading.</p>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>
+                                    Choose files to upload to Magnificent. You can select more than one file at a time.
+                                    You can also drag and drop files anywhere on this page to start uploading.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p>&nbsp;</p>
+
+                        <div class="row">
+                            <div class="col-xs-9 text-right align-middle">
+                                <a href="#" data-dismiss="modal">Cancel</a>
+                            </div>
+
+                            <div class="col-xs-3 text-right align-middle">
+                                <a class="btn btn-default" id="upl-modal1-browse">Choose File</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="#" data-dismiss="modal">Close</a>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer small">
+                        <div class="col-xs-6 text-left">
+                            Step 1 of 3
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            Next Step: Enter Email
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="upl-modal2" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Enter Your Email</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input type="text" placeholder="name@example.com" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 40px;">
+                            <div class="col-xs-9 text-right align-middle">
+                                <a href="#" data-dismiss="modal">Cancel</a>
+                            </div>
+
+                            <div class="col-xs-3 text-right align-middle">
+                                <a class="btn btn-default" data-dismiss="modal" data-toggle="modal"
+                                   data-target="#upl-modal3">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer small">
+                        <div class="col-xs-6 text-left">
+                            Step 2 of 3
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            Next Step: Enter Email
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="upl-modal3" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Special Instructions</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <textarea placeholder="Enter your extraction desires here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 40px;">
+                            <div class="col-xs-9 text-right align-middle">
+                                <a href="#" data-dismiss="modal">Cancel</a>
+                            </div>
+
+                            <div class="col-xs-3 text-right align-middle">
+                                <a class="btn btn-default" id="upl-modal4-finish" data-dismiss="modal" data-target="#upl-modal4">Finish</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer small">
+                        <div class="col-xs-6 text-left">
+                            Step 3 of 3
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            Next Step: Celebrate
+                        </div>
                     </div>
                 </div>
             </div>
@@ -228,6 +329,13 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+
+        <script>
+            $(window).load(function () {
+                $('#upl-modal1').modal('show');
+            });
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

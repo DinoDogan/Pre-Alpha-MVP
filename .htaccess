@@ -933,3 +933,12 @@ FileETag None
 #     RewriteCond %{REQUEST_FILENAME} !-f
 #     RewriteRule ^(.+)\.(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp)$ $1.$3 [L]
 # </IfModule>
+
+
+# ----------------------------------------------------------------------
+# | Increase max upload sizes                                          |
+# ----------------------------------------------------------------------
+php_value upload_max_filesize 250M
+php_value post_max_size 250M
+php_value max_input_time 0
+php_value max_execution_time 0

@@ -1,4 +1,53 @@
 /**
+ * jQuery Ajax w/ Progress
+ */
+$.customAjax = function (params) {
+
+    var $ajax;
+    var progressFuncs = [];
+    var uploadProgressFuncs = [];
+
+    params.xhr = function () {
+        var xhr = $.ajaxSettings.xhr();
+
+        xhr.addEventListener("progress", function (e) {
+            for (var i in progressFuncs) {
+                progressFuncs[i].apply($ajax, [e]);
+            }
+        });
+
+        xhr.upload.addEventListener("progress", function (e) {
+            for (var i in uploadProgressFuncs) {
+                uploadProgressFuncs[i].apply($ajax, [e]);
+            }
+        });
+
+        return xhr;
+    };
+
+    $ajax = $.ajax(params);
+
+    // extend
+
+    // std progress
+    $ajax.progress = function (func) {
+        progressFuncs.push(func);
+        // allow chaining
+        return $ajax;
+    };
+
+    // upload progress
+    $ajax.uploadProgress = function (func) {
+        uploadProgressFuncs.push(func);
+        // allow chaining
+        return $ajax;
+    };
+
+    return $ajax;
+};
+
+
+/**
  * Header scroll stuff
  */
 (function () {
@@ -94,6 +143,59 @@
 
     });
 }());
+
+/**
+ * Hero upload modal stuff
+ */
+(function () {
+
+    var files;
+
+    $("#upl-modal1-browse").click(function () {
+        var $fileInput = $("<input>", {type: "file", multiple: "multiple", accept: ".pdf"});
+        $fileInput.click();
+
+        $fileInput.change(function () {
+            files = this.files;
+
+            $("#upl-modal1").modal("hide");
+            $("#upl-modal2").modal("show");
+        });
+    });
+
+    $("#upl-modal4-finish").click(function () {
+
+        var formData = new FormData();
+
+        formData.append("email", "slogar.sheng@gmail.com");
+        formData.append("message", "Special instructions");
+
+        for (var i = 0; i < files.length; i++) {
+            formData.append("files[]", files[i]);
+        }
+
+        console.log(formData);
+
+        $.customAjax({
+            url: "/api/upload.php",
+            type: "POST",
+            dataType: "JSON",
+            data: formData,
+            processData: false,
+            contentType: false,
+            cache: false
+        }).uploadProgress(function (e) {
+            var currentProgress = e.loaded / e.total;
+            console.log(currentProgress);
+        }).done(function (json) {
+            console.log(json);
+        }).error(function (e) {
+            console.error(e);
+        });
+
+    });
+}());
+
 
 /**
  * Contact page
