@@ -107,6 +107,14 @@ textarea {
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+
+    -webkit-transition: .4s ease;
+    -webkit-transition-property: color, border-color, visibility, background-color, box-shadow,
+    -webkit-transform;
+
+    transition: .4s ease;
+    transition-property: color, border-color, visibility, background-color, box-shadow,
+    transform;
 }
 
 html {
@@ -119,6 +127,7 @@ html {
 body {
     font-size: 0;
     height: 100%;
+    min-width: 1000px;
 }
 
 section {
@@ -146,12 +155,18 @@ section {
     right: 0;
     z-index: 10000;
 
-    color: #ffffff;
+    color: #fff;
 
     -webkit-transition: color 1s ease, text-shadow 1s ease, background-color 1s ease;
     transition: color 1s ease, text-shadow 1s ease, background-color 1s ease;
 
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* override child styles so we don't get a double animation */
+#header * {
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
 }
 
 #header.header--blue {
@@ -222,16 +237,16 @@ section {
     text-align: left;
 }
 
-.cloud-upload-src > span {
+.cloud-upload-src {
     position: relative;
+}
+
+.cloud-upload-src > span {
+    position: absolute;
     display: inline-block;
     font-size: .8rem;
-    left: 100px;
-    right: 0;
-    text-align: center;
-    top: 50%;
-    line-height: 30px;
-    margin-top: -15px;
+    top: 60px;
+    left: 72px;
 
     white-space: nowrap;
     overflow: hidden;
@@ -479,11 +494,13 @@ section {
    ========================================================================== */
 
 #footer-home {
-
+    overflow: hidden;
 }
 
 #footer {
     margin-top: -80px;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -504,26 +521,24 @@ section {
 
 #footer-social {
     text-align: right;
-
 }
 
 #footer-social > a > i {
-    font-size: 20px;
+    font-size: 17px;
     color: white;
     display: inline-block;
-    line-height: 28px;
-    width: 30px;
-    text-align: right;
+    line-height: 36px;
+    width: 38px;
+    text-align: center;
     border-radius: 50%;
     border: 1px solid #fff;
-    margin: 20px;
-
+    margin-left: 60px;
 }
 
-
-
-
-
+#footer-social > a:hover > i {
+    border-color: #004370;
+    color: #004370;
+}
 
 /* ==========================================================================
    Helper classes
