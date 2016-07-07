@@ -8,6 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Latest compiled and minified bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional bootstrap theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/normalize.css">
@@ -39,13 +43,14 @@
                     </div>
                 </div>
             </div>
+
         <!-- Hero sections -->
 
         <section id="home">
             <div class="home-background"></div>
                 <div class="call-to-action content">
                     <div class="cloud-upload">
-                        <div class="cloud-upload-src">
+                        <div class="cloud-upload-src" data-toggle="modal" data-target="#mymodal">
                             <span>PDF</span>
 
                         <!--<img src="img/cloud-icon-active.png">-->
@@ -75,6 +80,28 @@
                     </div>
                 </div>
         </section>
+
+        <!-- Modal overlay section using Bootstrap-->
+
+        <div class="modal fade" id="mymodal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Upload to Magnificent</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Choose files to upload to Magnificent. You can select more than one file at a time.<br>You can also drag and drop files anywhere on this page to start uploading.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" data-dismiss="modal">Close</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- About section -->
 
@@ -181,6 +208,9 @@
         <script src="js/jquery.easing.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <!-- Latest compiled and minified bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
