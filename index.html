@@ -117,7 +117,7 @@
 
                         <div class="row">
                             <div class="col-xs-9 text-right align-middle">
-                                <a href="#" data-dismiss="modal">Cancel</a>
+                                <a href="#" data-dismiss="modal">Close</a>
                             </div>
 
                             <div class="col-xs-3 text-right align-middle">
@@ -155,7 +155,7 @@
 
                         <div class="row" style="margin-top: 40px;">
                             <div class="col-xs-9 text-right align-middle">
-                                <a href="#" data-dismiss="modal">Cancel</a>
+                                <a href="#" data-dismiss="modal">Previous</a>
                             </div>
 
                             <div class="col-xs-3 text-right align-middle">
@@ -194,17 +194,62 @@
 
                         <div class="row" style="margin-top: 40px;">
                             <div class="col-xs-9 text-right align-middle">
-                                <a href="#" data-dismiss="modal">Cancel</a>
+                                <a href="#" data-dismiss="modal">P</a>
                             </div>
 
                             <div class="col-xs-3 text-right align-middle">
-                                <a class="btn btn-default" id="upl-modal4-finish" data-dismiss="modal" data-target="#upl-modal4">Finish</a>
+                                <a class="btn btn-default" id="upl-modal3-finish" data-dismiss="modal"
+                                   data-target="#upl-modal4">Finish</a>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer small">
                         <div class="col-xs-6 text-left">
                             Step 3 of 3
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            Next Step: Celebrate
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="upl-modal4" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Uploading...</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>
+                                    Your PDF will be extracted and formated for easy-publishing on your WordPress
+                                    website. It takes 24 hrs for our machine-learning engine to explicate the contents
+                                    of your PDF, interpret your instructions, and format the output. Each outcome is
+                                    then checked by a real, live person before the results are sent to you.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 40px;">
+                            <div class="col-xs-9 text-right align-middle">
+                                <a href="#" data-dismiss="modal">Close</a>
+                            </div>
+
+                            <div class="col-xs-3 text-right align-middle">
+                                <a class="btn btn-default" id="upl-modal4-finish" data-dismiss="modal"
+                                   data-target="#upl-modal4">Share</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer small">
+                        <div class="col-xs-6 text-left">
+                            You've reached the finish line
                         </div>
                         <div class="col-xs-6 text-right">
                             Next Step: Celebrate
@@ -333,7 +378,7 @@
 
         <script>
             $(window).load(function () {
-                $('#upl-modal1').modal('show');
+                $('#upl-modal4').modal('show');
             });
         </script>
 
