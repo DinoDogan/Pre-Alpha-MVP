@@ -618,6 +618,45 @@ textarea {
 }
 
 /* ==========================================================================
+   Upload Modals
+   ========================================================================== */
+
+#upl-modal4-header {
+    position: relative;
+}
+
+#upl-modal4-progress {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+}
+
+#upl-modal4-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #004370;
+    width: 0%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    -webkit-transition: visibility 1s ease 1s, opacity 1s ease 1s, width 2s ease;
+    transition: visibility 1s ease 1s, opacity 1s ease 1s, width 2s ease;
+}
+
+#upl-modal4-progress-bar.is-visible {
+    opacity: 1;
+    visibility: visible;
+
+    -webkit-transition: visibility 1s ease, opacity 1s ease, width 2s ease;
+    transition: visibility 1s ease, opacity 1s ease, width 2s ease;
+}
+
+/* ==========================================================================
    Helper classes
    ========================================================================== */
 

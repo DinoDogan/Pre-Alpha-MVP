@@ -48,6 +48,26 @@ $.customAjax = function (params) {
 
 
 /**
+ * Fade the HTML of an object.
+ *
+ * Storyboard:
+ * - fade out element
+ * - change html
+ * - fade element in
+ *
+ * @param   {string}   html        HTML to transition to (can also be a DOM object)
+ * @param   {number}   [speed]     Speed of animation
+ * @param   {function} [complete]  Animation complete callback
+ */
+$.fn.fadeHTML = function (html, speed, complete) {
+    $(this).fadeTo(speed, 0, function () {
+        $(this).html("").append(html).fadeTo(speed, 1, complete);
+    });
+    return this;
+};
+
+
+/**
  * Header scroll stuff
  */
 (function () {
@@ -150,31 +170,45 @@ $.customAjax = function (params) {
 (function () {
 
     var files;
+    var $progressBar = $("#upl-modal4-progress-bar");
+    var $emailInput = $("#upl-modal2-input");
+    var $messageInput = $("#upl-modal3-input");
 
-    $("#upl-modal1-browse").click(function () {
+    var $chooseFilesBtn = $("#upl-modal1-browse");
+    var $uplBtn = $("#upl-modal3-finish");
+
+    var $progressStatus = $("#upl-modal4-title");
+
+    $chooseFilesBtn.click(function () {
         var $fileInput = $("<input>", {type: "file", multiple: "multiple", accept: ".pdf"});
         $fileInput.click();
 
         $fileInput.change(function () {
             files = this.files;
 
+            console.log(files);
+
             $("#upl-modal1").modal("hide");
             $("#upl-modal2").modal("show");
         });
     });
 
-    $("#upl-modal4-finish").click(function () {
+    $uplBtn.click(function () {
 
         var formData = new FormData();
 
-        formData.append("email", "slogar.sheng@gmail.com");
-        formData.append("message", "Special instructions");
+        formData.append("email", $emailInput.val());
+        formData.append("message", $messageInput.val());
+
+        // clear inputs
+        $emailInput.add($messageInput).val("");
 
         for (var i = 0; i < files.length; i++) {
             formData.append("files[]", files[i]);
         }
 
-        console.log(formData);
+        $progressStatus.html("Uploading...");
+        $progressBar.addClass("is-visible");
 
         $.customAjax({
             url: "/api/upload.php",
@@ -186,13 +220,16 @@ $.customAjax = function (params) {
             cache: false
         }).uploadProgress(function (e) {
             var currentProgress = e.loaded / e.total;
-            console.log(currentProgress);
+            $progressBar.css({width: Math.round(currentProgress * 100) + "%"});
         }).done(function (json) {
-            console.log(json);
+            setTimeout(function () {
+                $progressStatus.fadeHTML("Success!");
+            }, 200);
         }).error(function (e) {
-            console.error(e);
+            $progressStatus.fadeHTML("Error uploading :(");
+        }).complete(function () {
+            $progressBar.removeClass("is-visible");
         });
-
     });
 }());
 
