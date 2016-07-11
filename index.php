@@ -2,88 +2,46 @@
 
 <?php include "inc/header.php"; ?>
 
-        <!-- Hero sections -->
 
-        <section id="home">
-            <div class="home-background"></div>
-                <div class="call-to-action content">
-                    <div class="cloud-upload">
-                        <div class="cloud-upload-src" data-toggle="modal" data-target="#upl-modal1">
-                            <span>PDF</span>
-                            <img src="img/cloud-icon.png">
-                        </div>
-                    </div>
-                    <div class="cloud-arrow">
-                        <img src="img/arrow-icon.png">
-                    </div>
-                    <div class="cloud-carousel">
-                        <div class="cloud-carousel-inner">
-                            <img src="img/page-icon.png">
 
-                            <div class="cloud-carousel-dest">
-                                <span>WordPress</span>
-                                <span>Facebook<small>coming soon</small></span>
-                                <span>Medium<small>coming soon</small></span>
-                            </div>
 
-                            <div class="cloud-carousel-btns">
-                                <!-- Populated by JavaScript -->
-                            </div>
-                        </div>
-                    </div>
+<section id="home">
+    <div class="home-background"></div>
+    <div class="call-to-action content">
+        <div class="cloud-upload">
+            <div class="cloud-upload-src">
+                <span>PDF</span>
+
+                <!--<img src="img/cloud-icon-active.png">-->
+                <img src="img/cloud-icon.png">
+                <!--<i class="fa fa-cloud-upload" aria-hidden="true"></i>-->
+            </div>
+        </div>
+        <div class="cloud-arrow">
+            <img src="img/arrow-icon.png">
+            <!--<i class="fa fa-long-arrow-right" aria-hidden="true"></i>-->
+        </div>
+        <div class="cloud-carousel">
+            <div class="cloud-carousel-inner">
+                <img src="img/page-icon.png">
+
+                <div class="cloud-carousel-dest">
+                    <span>WordPress</span>
+                    <span>Facebook<small>coming soon</small></span>
+                    <span>Medium<small>coming soon</small></span>
                 </div>
-        </section>
 
-        <!-- About section -->
-
-        <section id="about">
-            <div class="content">
-                <p>
-                    <a class="btn" data-toggle="modal" data-target="#mymodal">Open Modal</a>
-                </p>
-                <p>
-                    <strong>mag·nif·i·cent</strong><br>
-                    adjective:
-                    </p><p>
-                    1. impressively beautiful, elaborate, or extravagant; striking.<br>
-                    2. very good; excellent. <br>
-                    3. extract and publish PDFs to WordPress.
-                </p>
+                <div class="cloud-carousel-btns">
+                    <!-- Populated by JavaScript -->
+                </div>
+                <!--<i class="fa fa-file-o" aria-hidden="true"></i>-->
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+        
 
-        <!-- FAQ section -->
-
-        <section id="faq">
-            <div class="content">
-                <p class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-                <p class="faq-answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                <p class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-                <p class="faq-answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <p class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-                <p class="faq-answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-            </div>
-        </section>
-
-        <!-- Contact section -->
-
-        <section id="contact">
-            <div class="content">
-                <form data-action="/api/contact.php" data-method="POST" id="contact-form">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" placeholder="Ask us anything..." required></textarea>
-                    <button type="submit">Send</button>
-
-                    <div id="contact-form-overlay">
-                        <span>
-                            <i class="fa fa-check"></i>
-                            Your question was submitted.
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </section>
+        
 
 
 

@@ -1,38 +1,5 @@
         <!-- Footer-Home sections -->
-        <section id="footer-home">
-            <div class="home-background"></div>
-            <div class="call-to-action content">
-                <div class="cloud-upload">
-                    <div class="cloud-upload-src">
-                        <span>PDF</span>
 
-                        <!--<img src="img/cloud-icon-active.png">-->
-                        <a href="index2.html"><img src="img/cloud-icon.png"></a>
-                        <!--<i class="fa fa-cloud-upload" aria-hidden="true"></i>-->
-                    </div>
-                </div>
-                <div class="cloud-arrow">
-                    <img src="img/arrow-icon.png">
-                    <!--<i class="fa fa-long-arrow-right" aria-hidden="true"></i>-->
-                </div>
-                <div class="cloud-carousel">
-                    <div class="cloud-carousel-inner">
-                        <img src="img/page-icon.png">
-
-                        <div class="cloud-carousel-dest">
-                            <span>WordPress</span>
-                            <span>Facebook<small>coming soon</small></span>
-                            <span>Medium<small>coming soon</small></span>
-                        </div>
-
-                        <div class="cloud-carousel-btns">
-                            <!-- Populated by JavaScript -->
-                        </div>
-                        <!--<i class="fa fa-file-o" aria-hidden="true"></i>-->
-                    </div>
-                </div>
-            </div>
-        </section>
         <div class="content">
             <div id="footer">
                 <div id="footer-links">
