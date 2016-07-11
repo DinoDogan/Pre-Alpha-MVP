@@ -104,10 +104,10 @@ textarea {
    Boostrap custom styles
    ========================================================================== */
 .modal {
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
-.modal-dialog {
+.modal-dialog-large {
     width: 800px;
 }
 
@@ -115,8 +115,75 @@ textarea {
     padding: 35px 40px;
 }
 
+.modal-header-hint {
+    float: right;
+    font-size: 23px;
+    display: inline-block;
+
+    line-height: 28px;
+    width: 30px;
+
+    color: #ddd;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.modal-header-hint:hover {
+    color: #222;
+}
+
 .modal-body {
     padding: 40px 32px;
+}
+
+.hint {
+    position: relative;
+}
+
+.hint:before,
+.hint:after {
+    visibility: hidden;
+    opacity: 0;
+
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+
+    -webkit-transition: .2s ease;
+    transition: .2s ease;
+}
+
+.hint:before {
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    font-size: .7rem;
+    color: #fff;
+    background: #b12424;
+    padding: 6px 12px;
+    display: block;
+    border-radius: 4px;
+
+    content: attr(data-hint);
+}
+
+.hint:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    margin-top: -16px;
+    border: 8px solid transparent;
+    border-bottom-color: #b12424;
+}
+
+.hint.hint--visible:before,
+.hint.hint--visible:after {
+    visibility: visible;
+    opacity: 1;
+
+    -webkit-transform: none;
+    transform: none;
 }
 
 .modal-footer {
@@ -137,12 +204,33 @@ textarea {
     background: #efefef;
     border-radius: 0;
     text-shadow: none;
-    color: #000;
-    border: 1px solid #ddd;
+    color: #c7c7c7;
+    border: none;
     box-shadow: none;
-    padding: 10px 16px;
-    width: 100%;
+    padding: 9px 10px;
     text-align: center;
+
+    font-size: .9rem;
+    font-weight: 300;
+
+    height: 43px;
+    line-height: 28px;
+    min-width: 120px;
+}
+
+.btn:hover {
+    background-color: #13537e;
+    color: #fff;
+}
+
+.btn:active, .btn:focus {
+    background-color: #000 !important;
+    box-shadow: none;
+    color: #fff !important;
+}
+
+.xs {
+    font-size: .8rem;
 }
 
 /* ==========================================================================
@@ -479,6 +567,7 @@ textarea {
     background: #fff;
     border: 1px solid #ccc;
     outline: none;
+    text-align: left;
 }
 
 #contact-form input:focus,
@@ -505,6 +594,7 @@ textarea {
     width: 100%;
     background: #004370;
     color: #fff;
+    text-align: center;
 }
 
 #contact-form-overlay {
@@ -662,6 +752,27 @@ textarea {
 
     -webkit-transition: visibility 1s ease, opacity 1s ease, width 2s ease;
     transition: visibility 1s ease, opacity 1s ease, width 2s ease;
+}
+
+#upl-modal5-icons {
+    text-align: center;
+}
+
+#upl-modal5-icons > a > i {
+    display: inline-block;
+    line-height: 50px;
+    width: 50px;
+    font-size: 20px;
+    margin: 8px;
+    text-align: center;
+    color: #fff;
+    background: #222;
+    border-radius: 50%;
+}
+
+#upl-modal5-icons > a:hover > i {
+    background-color: #ddd;
+    color: #222;
 }
 
 /* ==========================================================================

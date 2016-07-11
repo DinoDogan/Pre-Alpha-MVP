@@ -66,6 +66,27 @@ $.fn.fadeHTML = function (html, speed, complete) {
     return this;
 };
 
+function bootstrapModal(args) {
+
+    args = args || {};
+
+    var modal = $("<div>", {class: "modal fade", role: "dialog", "data-keyboard": false, "data-backdrop": "static"});
+    var modalDialog = $("<div>", {class: "modal-dialog"});
+    //
+    var modalContent = $("<div>", {class: "modal-content"});
+    var modalHeader = $("<div>", {class: "modal-header", html: args.header});
+    var modalTitle = $("<div>", {class: "modal-title", html: args.title});
+    var modalBody = $("<div>", {class: "modal-body", html: args.body});
+    var modalFooter = $("<div>", {class: "modal-footer", html: args.footer});
+
+    modalHeader.append(modalTitle);
+    modalContent.append(modalHeader).append(modalBody).append(modalFooter);
+
+    modal.append(modalDialog);
+    modalDialog.append(modalContent);
+
+    return modal;
+}
 
 /**
  * Header scroll stuff
@@ -168,69 +189,147 @@ $.fn.fadeHTML = function (html, speed, complete) {
  * Hero upload modal stuff
  */
 (function () {
-
     var files;
-    var $progressBar = $("#upl-modal4-progress-bar");
-    var $emailInput = $("#upl-modal2-input");
-    var $messageInput = $("#upl-modal3-input");
 
-    var $chooseFilesBtn = $("#upl-modal1-browse");
-    var $uplBtn = $("#upl-modal3-finish");
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
 
-    var $progressStatus = $("#upl-modal4-title");
+    //
+    // CHOOSE FILES (STEP ONE)
+    //
 
-    $chooseFilesBtn.click(function () {
+    $("#upl-modal1-browse").click(function () {
         var $fileInput = $("<input>", {type: "file", multiple: "multiple", accept: ".pdf"});
         $fileInput.click();
 
         $fileInput.change(function () {
             files = this.files;
 
-            console.log(files);
+            var validationComplete = true;
 
-            $("#upl-modal1").modal("hide");
-            $("#upl-modal2").modal("show");
+            for (var i = 0; i < files.length; i++) {
+
+                if (files[i].type != "application/pdf") {
+                    validationComplete = false;
+                    break;
+                }
+            }
+
+            if (validationComplete) {
+                $("#upl-modal1").modal("hide");
+                $("#upl-modal2").modal("show");
+            }
+            else {
+                alert("One or more files do not match type PDF. Please reselect files and try again.");
+            }
         });
     });
 
-    $uplBtn.click(function () {
 
-        var formData = new FormData();
+    //
+    // EMAIL VALIDATION (STEP TWO)
+    //
 
-        formData.append("email", $emailInput.val());
-        formData.append("message", $messageInput.val());
+    var $emailInput = $("#upl-modal2-input");
+    var $emailInputParent = $emailInput.parent().addClass("hint").attr("data-hint", "Invalid email address");
 
-        // clear inputs
-        $emailInput.add($messageInput).val("");
+    $("#upl-modal2").on("shown.bs.modal", function () {
+        $emailInput.select();
+    });
 
-        for (var i = 0; i < files.length; i++) {
-            formData.append("files[]", files[i]);
+    $("#upl-modal2-next").click(function (e) {
+
+        if (!validateEmail($emailInput.val())) {
+            $emailInput.select();
+            $emailInputParent.addClass("hint--visible");
+
+            $emailInput.one("input", function () {
+                $emailInputParent.removeClass("hint--visible");
+            });
+
+            e.stopPropagation();
         }
-
-        $progressStatus.html("Uploading...");
-        $progressBar.addClass("is-visible");
-
-        $.customAjax({
-            url: "/api/upload.php",
-            type: "POST",
-            dataType: "JSON",
-            data: formData,
-            processData: false,
-            contentType: false,
-            cache: false
-        }).uploadProgress(function (e) {
-            var currentProgress = e.loaded / e.total;
-            $progressBar.css({width: Math.round(currentProgress * 100) + "%"});
-        }).done(function (json) {
-            setTimeout(function () {
-                $progressStatus.fadeHTML("Success!");
-            }, 200);
-        }).error(function (e) {
-            $progressStatus.fadeHTML("Error uploading :(");
-        }).complete(function () {
-            $progressBar.removeClass("is-visible");
-        });
     });
+
+    //
+    // SPECIAL INSTRUCTIONS VALIDATION (STEP THREE)
+    //
+    var $messageInput = $("#upl-modal3-input");
+    var $messageInputParent = $messageInput.parent().addClass("hint").attr("data-hint", "Special instructions required");
+
+    $("#upl-modal3").on("shown.bs.modal", function () {
+        $messageInput.select();
+    });
+
+    $("#upl-modal3-next").click(function (e) {
+        console.log($messageInput)
+
+        if ($.trim($messageInput.val()) == "") {
+
+            $messageInputParent.addClass("hint--visible");
+
+            $messageInput.one("input", function () {
+                $messageInputParent.removeClass("hint--visible").select();
+            });
+
+            e.stopPropagation();
+        }
+    });
+
+    //
+    // FILE UPLOAD (STEP FOUR)
+    //
+
+    var $progressBar = $("#upl-modal4-progress-bar");
+    var $progressStatus = $("#upl-modal4-title");
+
+    $("#upl-modal4").on("shown.bs.modal", function () {
+
+        if (files) {
+
+            var formData = new FormData();
+
+            formData.append("email", $emailInput.val());
+            formData.append("message", $messageInput.val());
+
+            // clear inputs
+            $emailInput.add($messageInput).val("");
+
+            for (var i = 0; i < files.length; i++) {
+                formData.append("files[]", files[i]);
+            }
+
+            $progressStatus.html("Uploading...");
+            $progressBar.addClass("is-visible");
+
+            $.customAjax({
+                url: "/api/upload.php",
+                type: "POST",
+                dataType: "JSON",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false
+            }).uploadProgress(function (e) {
+                var currentProgress = e.loaded / e.total;
+                $progressBar.css({width: Math.round(currentProgress * 100) + "%"});
+            }).done(function (json) {
+                setTimeout(function () {
+                    $progressStatus.fadeHTML("Success!");
+                }, 200);
+            }).error(function (e) {
+                $progressStatus.fadeHTML("Error uploading :(");
+            }).complete(function () {
+                $progressBar.removeClass("is-visible");
+            });
+        }
+        else {
+
+        }
+    });
+
 }());
 
 
