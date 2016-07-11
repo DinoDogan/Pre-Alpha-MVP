@@ -1,6 +1,6 @@
 <!-- Get header from header.php -->
 
-<?php include “inc/header.php”; ?>
+<?php include "inc/header.php"; ?>
 
         <!-- Hero sections -->
 
@@ -332,11 +332,6 @@
         </div>
 
 
-        <!-- Get footer from header.php -->
+        <!-- Get footer from footer.php -->
 
-        <?php include “inc/header.php”; ?>
-
-
-
-    </body>
-</html>
+<?php include "inc/footer.php"; ?>
