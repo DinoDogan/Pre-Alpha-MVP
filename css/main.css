@@ -278,6 +278,7 @@ textarea {
     font-size: 1rem;
     display: inline-block;
     margin-left: 47px;
+    color: #4d82aa;
 }
 
 /* ==========================================================================
@@ -291,7 +292,7 @@ textarea {
 }
 
 .home-background {
-    background-image: url("../img/home-background.jpg");
+    background-image: url("../img/home-background-2.jpg");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -589,11 +590,15 @@ textarea {
 
 #footer-links > a {
     font-size: .6rem;
-    color: white;
+    color: #4d82aa;
     text-decoration: none;
-    margin: 10px;
+    margin: 17px;
     font-weight: 400;
 
+}
+
+#footer-links > a:hover {
+    color: white;
 }
 
 #footer-social {
@@ -602,19 +607,21 @@ textarea {
 
 #footer-social > a > i {
     font-size: 17px;
-    color: white;
+    color: #4d82aa;
     display: inline-block;
     line-height: 36px;
     width: 38px;
     text-align: center;
     border-radius: 50%;
-    border: 1px solid #fff;
+    border: 1px solid #4d82aa;
     margin-left: 60px;
 }
 
+
+
 #footer-social > a:hover > i {
-    border-color: #004370;
-    color: #004370;
+    border-color: white;
+    color: white;
 }
 
 /* ==========================================================================
