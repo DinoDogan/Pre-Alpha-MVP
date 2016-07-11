@@ -107,6 +107,18 @@ textarea {
     font-size: 1rem;
 }
 
+.modal-backdrop {
+    background: #1b2125;
+}
+
+.modal-backdrop.in {
+    opacity: .8;
+}
+
+.modal-dialog {
+    margin: 200px auto;
+}
+
 .modal-dialog-large {
     width: 800px;
 }
@@ -137,61 +149,14 @@ textarea {
     padding: 40px 32px;
 }
 
-.hint {
-    position: relative;
-}
-
-.hint:before,
-.hint:after {
-    visibility: hidden;
-    opacity: 0;
-
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-
-    -webkit-transition: .2s ease;
-    transition: .2s ease;
-}
-
-.hint:before {
-    position: absolute;
-    top: 100%;
-    left: 20px;
-    font-size: .7rem;
-    color: #fff;
-    background: #b12424;
-    padding: 6px 12px;
-    display: block;
-    border-radius: 4px;
-
-    content: attr(data-hint);
-}
-
-.hint:after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 30px;
-    margin-top: -16px;
-    border: 8px solid transparent;
-    border-bottom-color: #b12424;
-}
-
-.hint.hint--visible:before,
-.hint.hint--visible:after {
-    visibility: visible;
-    opacity: 1;
-
-    -webkit-transform: none;
-    transform: none;
-}
-
 .modal-footer {
     padding: 20px 40px;
 }
 
 .modal-content {
     border-radius: 0;
+    border: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -308,6 +273,55 @@ textarea {
     margin: -2px;
 }
 
+.hint {
+    position: relative;
+}
+
+.hint:before,
+.hint:after {
+    visibility: hidden;
+    opacity: 0;
+
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+
+    -webkit-transition: .2s ease;
+    transition: .2s ease;
+}
+
+.hint:before {
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    font-size: .7rem;
+    color: #fff;
+    background: #b12424;
+    padding: 6px 12px;
+    display: block;
+    border-radius: 4px;
+
+    content: attr(data-hint);
+}
+
+.hint:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    margin-top: -16px;
+    border: 8px solid transparent;
+    border-bottom-color: #b12424;
+}
+
+.hint.hint--visible:before,
+.hint.hint--visible:after {
+    visibility: visible;
+    opacity: 1;
+
+    -webkit-transform: none;
+    transform: none;
+}
+
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -381,6 +395,7 @@ textarea {
 }
 
 .home-background {
+    background-color: #263d4e;
     background-image: url("../img/home-background-2.jpg");
     background-repeat: no-repeat;
     background-position: top;

@@ -264,8 +264,6 @@ function bootstrapModal(args) {
     });
 
     $("#upl-modal3-next").click(function (e) {
-        console.log($messageInput)
-
         if ($.trim($messageInput.val()) == "") {
 
             $messageInputParent.addClass("hint--visible");
@@ -319,9 +317,11 @@ function bootstrapModal(args) {
                 setTimeout(function () {
                     $progressStatus.fadeHTML("Success!");
                 }, 200);
-            }).error(function (e) {
+
+                files = null;
+            }).fail(function (e) {
                 $progressStatus.fadeHTML("Error uploading :(");
-            }).complete(function () {
+            }).always(function () {
                 $progressBar.removeClass("is-visible");
             });
         }
