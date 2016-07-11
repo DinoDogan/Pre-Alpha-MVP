@@ -91,34 +91,34 @@ function bootstrapModal(args) {
 /**
  * Header scroll stuff
  */
-(function () {
-
-    var $header = $("#header");
-    var $home = $("#home");
-    var $home_height = null;
-
-    var $footerHome = $("#footer-home");
-    var $footerHome_top = null;
-
-    $(window).scroll(function () {
-        var scrollTop = document.body.scrollTop;
-
-        if (scrollTop > ($home_height + 250) && scrollTop < ($footerHome_top - 100)) {
-            $header.addClass("header--blue");
-        }
-        else {
-            $header.removeClass("header--blue");
-        }
-    });
-
-    $(window).resize(function () {
-        $home_height = $home.height();
-        $footerHome_top = $footerHome.offset().top;
-    });
-
-    // on page load do this:
-    $(window).trigger("resize").trigger("scroll");
-}());
+// (function () {
+//
+//     var $header = $("#header");
+//     var $home = $("#home");
+//     var $home_height = null;
+//
+//     var $footerHome = $("#footer-home");
+//     var $footerHome_top = null;
+//
+//     $(window).scroll(function () {
+//         var scrollTop = document.body.scrollTop;
+//
+//         if (scrollTop > ($home_height + 250) && scrollTop < ($footerHome_top - 100)) {
+//             $header.addClass("header--blue");
+//         }
+//         else {
+//             $header.removeClass("header--blue");
+//         }
+//     });
+//
+//     $(window).resize(function () {
+//         $home_height = $home.height();
+//         $footerHome_top = $footerHome.offset().top;
+//     });
+//
+//     // on page load do this:
+//     $(window).trigger("resize").trigger("scroll");
+// }());
 
 /**
  * Hero cloud carousel

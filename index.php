@@ -2,13 +2,10 @@
 
 <?php include "inc/header.php"; ?>
 
-
-
-
 <section id="home">
     <div class="home-background"></div>
     <div class="call-to-action content">
-        <div class="cloud-upload">
+        <div class="cloud-upload" data-toggle="modal" data-target="#upl-modal1">
             <div class="cloud-upload-src">
                 <span>PDF</span>
 
@@ -39,10 +36,6 @@
         </div>
     </div>
 </section>
-        
-
-        
-
 
 
         <!----------------------------------------------------------------------------------------

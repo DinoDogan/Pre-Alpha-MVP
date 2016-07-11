@@ -389,8 +389,7 @@ textarea {
    ========================================================================== */
 
 
-#home,
-#footer-home {
+#home {
     position: relative;
 }
 
@@ -404,7 +403,7 @@ textarea {
     top: 0;
     left: 0;
     right: 0;
-    bottom: -100px;
+    bottom: 0;
     z-index: -1;
 }
 
@@ -417,6 +416,7 @@ textarea {
 
 .cloud-upload {
     text-align: left;
+    cursor: pointer;
 }
 
 .cloud-upload-src {
@@ -676,10 +676,6 @@ textarea {
 /* ==========================================================================
    Footer
    ========================================================================== */
-
-#footer-home {
-    overflow: hidden;
-}
 
 #footer {
     margin-top: -80px;

@@ -2,14 +2,10 @@
 
 <?php include "inc/header.php"; ?>
 
-
 <!-- About section -->
 
 <section id="about">
     <div class="content">
-        <p>
-            <a class="btn" data-toggle="modal" data-target="#mymodal">Open Modal</a>
-        </p>
         <p>
             <strong>mag·nif·i·cent</strong><br>
             adjective:

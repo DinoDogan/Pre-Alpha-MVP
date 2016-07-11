@@ -41,15 +41,15 @@
 <div id="header">
     <div class="content">
         <div id="header-left">
-            <a href="#home">
+            <a href="/">
                 <div id="logo">Magnificent</div>
             </a>
         </div>
         <div id="header-right">
             <div id="header-links">
-                <a href="#about">About</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
+                <a href="/about.php">About</a>
+                <a href="/faq.php">FAQ</a>
+                <a href="/contact.php">Contact</a>
             </div>
         </div>
     </div>
