@@ -369,7 +369,11 @@ textarea {
 #logo {
     font-family: Bevan;
     font-size: 37px;
-    color: #4d82aa;
+    color: white;
+}
+
+#logo:hover {
+    color: #717171;
 }
 
 #header-right {
@@ -381,7 +385,7 @@ textarea {
     font-size: 1rem;
     display: inline-block;
     margin-left: 47px;
-    color: #4d82aa;
+    color: white;
 }
 
 /* ==========================================================================
@@ -692,7 +696,7 @@ textarea {
 
 #footer-links > a {
     font-size: .6rem;
-    color: #4d82aa;
+    color: white;
     text-decoration: none;
     margin: 17px;
     font-weight: 400;
@@ -700,7 +704,7 @@ textarea {
 }
 
 #footer-links > a:hover {
-    color: white;
+    color: #717171;
 }
 
 #footer-social {
@@ -709,21 +713,21 @@ textarea {
 
 #footer-social > a > i {
     font-size: 17px;
-    color: #4d82aa;
+    color: white;
     display: inline-block;
     line-height: 36px;
     width: 38px;
     text-align: center;
     border-radius: 50%;
-    border: 1px solid #4d82aa;
+    border: 1px solid white;
     margin-left: 60px;
 }
 
 
 
 #footer-social > a:hover > i {
-    border-color: white;
-    color: white;
+    border-color: #717171;
+    color: #717171;
 }
 
 /* ==========================================================================
