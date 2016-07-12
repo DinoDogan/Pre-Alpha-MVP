@@ -49,6 +49,7 @@ body {
 
 #tos-text {
     margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 #tos-text > p, ol, h2, h3 {

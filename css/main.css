@@ -384,11 +384,11 @@ textarea {
 #logo {
     font-family: Bevan;
     font-size: 37px;
-    color: white;
+    color: steelblue;
 }
 
 #logo:hover {
-    color: #717171;
+    color: white;
 }
 
 #header-right {
@@ -400,6 +400,10 @@ textarea {
     font-size: 1rem;
     display: inline-block;
     margin-left: 47px;
+    color: steelblue;
+}
+
+#header-links > a:hover {
     color: white;
 }
 
@@ -711,7 +715,7 @@ textarea {
 
 #footer-links > a {
     font-size: .6rem;
-    color: white;
+    color: steelblue;
     text-decoration: none;
     margin: 17px;
     font-weight: 400;
@@ -719,7 +723,7 @@ textarea {
 }
 
 #footer-links > a:hover {
-    color: #717171;
+    color: white;
 }
 
 #footer-social {
@@ -728,21 +732,21 @@ textarea {
 
 #footer-social > a > i {
     font-size: 17px;
-    color: white;
+    color: steelblue;
     display: inline-block;
     line-height: 36px;
     width: 38px;
     text-align: center;
     border-radius: 50%;
-    border: 1px solid white;
+    border: 1px solid steelblue;
     margin-left: 60px;
 }
 
 
 
 #footer-social > a:hover > i {
-    border-color: #717171;
-    color: #717171;
+    border-color: white;
+    color: white;
 }
 
 /* ==========================================================================
