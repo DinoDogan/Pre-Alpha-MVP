@@ -37,6 +37,7 @@
     </div>
 </section>
 
+<div id="upl-modals">
 
         <!----------------------------------------------------------------------------------------
             Upload File Modals
@@ -50,7 +51,8 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <i class="modal-header-hint fa fa-question-circle-o"></i>
+                        <i class="modal-header-hint fa fa-question-circle-o"
+                           data-help="<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>"></i>
                         <h4 class="modal-title">Upload to Magnificent</h4>
                     </div>
                     <div class="modal-body">
@@ -98,7 +100,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="modal-header-hint fa fa-question-circle-o"></i>
                         <h4 class="modal-title">Enter Your Email</h4>
                     </div>
                     <div class="modal-body">
@@ -142,14 +144,15 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <i class="modal-header-hint fa fa-question-circle-o"></i>
                         <h4 class="modal-title">Special Instructions</h4>
                     </div>
                     <div class="modal-body">
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <textarea placeholder="Enter your extraction desires here..." autofocus id="upl-modal3-input"></textarea>
+                                <textarea placeholder="Enter your extraction desires here..." autofocus
+                                          id="upl-modal3-input" maxlength="500"></textarea>
                             </div>
                         </div>
 
@@ -281,7 +284,7 @@
                 </div>
             </div>
         </div>
-
+</div>
 
         <!-- Get footer from footer.php -->
 

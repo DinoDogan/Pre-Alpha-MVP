@@ -1,13 +1,11 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
 /* ==========================================================================
    Font imports
    ========================================================================== */
 @import "../fonts/helveticaneue/index.css";
 @import "../fonts/avenirnextpro/index.css";
 @import "../fonts/bevan/index.css";
-/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
-@import url("/fonts/helveticaneue/index.css");
-@import "/fonts/avenirnextpro/index.css";
-@import url("/fonts/bevan/index.css");
 
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -117,6 +115,7 @@ textarea {
 
 .modal-dialog {
     margin: 200px auto;
+    position: relative;
 }
 
 .modal-dialog-large {
@@ -125,6 +124,7 @@ textarea {
 
 .modal-header {
     padding: 35px 40px;
+    height: 96px;
 }
 
 .modal-header-hint {
@@ -147,6 +147,7 @@ textarea {
 
 .modal-body {
     padding: 40px 32px;
+    overflow: auto;
 }
 
 .modal-footer {
@@ -157,6 +158,20 @@ textarea {
     border-radius: 0;
     border: none;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+@-webkit-keyframes fade-in {from{opacity:0;}}
+@keyframes fade-in {from{opacity: 0;}}
+
+.modal-content--help {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    -webkit-animation: fade-in .2s ease;
+    animation: fade-in .2s ease;
 }
 
 .row {
@@ -733,6 +748,15 @@ textarea {
 /* ==========================================================================
    Upload Modals
    ========================================================================== */
+
+#upl-modals {
+    display: inline;
+}
+
+#upl-modals .modal-body {
+    /*height: 300px;*/
+    /*overflow: auto;*/
+}
 
 #upl-modal4-header {
     position: relative;
