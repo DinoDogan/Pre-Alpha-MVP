@@ -1,0 +1,81 @@
+html {
+    font-family: "Helvetica Neue";
+    font-size: 18px;
+    font-weight: 300;
+    height: 100%;
+}
+
+body {
+    font-size: 0;
+    height: 100%;
+    min-width: 1000px;
+}
+
+
+.content {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/*#hdr-overlay {*/
+    /*font-size: 0;*/
+/*}*/
+
+#hdr-overlay-left,
+#hdr-overlay-right {
+    font-size: .7rem;
+    margin-top: 33px;
+    width: 50%;
+    display: inline-block;
+}
+
+
+
+#hdr-overlay-left > a {
+    font-size: .6rem;
+    color: steelblue;
+    text-decoration: none;
+    margin-right: 35px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+/*#hdr-overlay-left > a:hover {*/
+    /*color: #717171;*/
+/*}*/
+
+
+#tos-text {
+    margin-top: 50px;
+}
+
+#tos-text > p, ol, h2, h3 {
+    font-size: .7rem;
+    color: #575757;
+}
+
+/*#tos-text > ol {*/
+    /*font-size: .7rem;*/
+/*}*/
+
+
+#hdr-overlay-right {
+    text-align: right;
+}
+
+#hdr-overlay-right > i {
+    font-size: 1rem;
+    color: gray;
+}
+
+#hdr-overlay-right > i:hover {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+
+
+

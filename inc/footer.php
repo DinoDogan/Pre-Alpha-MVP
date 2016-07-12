@@ -6,7 +6,7 @@
                     <a href="#company">Company</a>
                     <a href="#services">Services</a>
                     <a href="#blog">Blog</a>
-                    <a href="#tos">TOS</a>
+                    <a href="tos.html">TOS</a>
                 </div>
                 <div id="footer-social">
                     <a href="https://twitter.com/MagnificentMktg" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
