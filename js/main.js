@@ -341,7 +341,6 @@ function bootstrapModal(args) {
 
 }());
 
-
 /**
  * Contact page
  */

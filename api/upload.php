@@ -23,6 +23,10 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) {
             $counter_path = $storage_path . "counter.db";
             $db_path = $storage_path . "db.xml";
 
+            // config
+            if (!is_dir($storage_path))
+                mkdir($storage_path);
+
             if (!is_file($counter_path))
                 file_put_contents($counter_path, "-1");
 
@@ -58,6 +62,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) {
 
                             $new_file_entry = $db->addChild('file');
                             $new_file_entry->addChild('name', $file["name"]);
+                            $new_file_entry->addChild('id', $counter);
                             $new_file_entry->addChild('email', $email);
                             $new_file_entry->addChild('message', $message);
 
