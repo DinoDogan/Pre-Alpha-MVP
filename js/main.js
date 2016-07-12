@@ -89,38 +89,6 @@ function bootstrapModal(args) {
 }
 
 /**
- * Header scroll stuff
- */
-// (function () {
-//
-//     var $header = $("#header");
-//     var $home = $("#home");
-//     var $home_height = null;
-//
-//     var $footerHome = $("#footer-home");
-//     var $footerHome_top = null;
-//
-//     $(window).scroll(function () {
-//         var scrollTop = document.body.scrollTop;
-//
-//         if (scrollTop > ($home_height + 250) && scrollTop < ($footerHome_top - 100)) {
-//             $header.addClass("header--blue");
-//         }
-//         else {
-//             $header.removeClass("header--blue");
-//         }
-//     });
-//
-//     $(window).resize(function () {
-//         $home_height = $home.height();
-//         $footerHome_top = $footerHome.offset().top;
-//     });
-//
-//     // on page load do this:
-//     $(window).trigger("resize").trigger("scroll");
-// }());
-
-/**
  * Hero cloud carousel
  */
 
@@ -328,6 +296,47 @@ function bootstrapModal(args) {
         else {
 
         }
+    });
+
+    //
+    // HELP DOCUMENTATION
+    //
+    $(".modal-header-hint").each(function () {
+        var $this = $(this);
+
+        $this.click(function () {
+            // generate overlay
+            var $modalContent = $("<div>", {class: "modal-content modal-content--help"});
+            var $modalHeader = $("<div>", {class: "modal-header"});
+            var $modalHeaderClose = $('<button>', {type: "button", class: "close", html: "&times"});
+
+            $modalHeader.append($modalHeaderClose).append('<h4 class="modal-title">Help</h4>');
+
+            $modalHeaderClose.click(function () {
+                $modalContent.remove();
+                $(window).off("resize.uplhelp");
+            });
+
+            var $modalBody = $("<div>", {
+                class: "modal-body",
+                html: '<div class="row"><div class="col-xs-12">' + $this.attr("data-help") + '</div></div>'
+            });
+
+            var $modalFooter = $("<div>", {
+                class: "modal-footer xs",
+                html: '<div class="col-xs-6 text-left"><a href="mailto:support@magnificent.com">support@magnificent.com</a></div>'
+                + '<div class="col-xs-6 text-right"><a href="contact.php" target="_blank">magnificent.com/support</a></div>'
+            });
+
+            // build
+            $modalContent.append($modalHeader).append($modalBody).append($modalFooter);
+
+            $this.parents(".modal-dialog").append($modalContent);
+
+            $(window).on("resize.uplhelp", function () {
+                $modalBody.css({height: $this.parent().parent().children('.modal-body')[0].offsetHeight + "px"})
+            }).trigger("resize.uplhelp");
+        });
     });
 
 }());
