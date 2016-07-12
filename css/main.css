@@ -181,10 +181,10 @@ textarea {
 }
 
 .btn {
-    background: #efefef;
+    background: #13537e;
     border-radius: 0;
     text-shadow: none;
-    color: #c7c7c7;
+    color: #fff;
     border: none;
     box-shadow: none;
     padding: 9px 10px;
@@ -196,11 +196,6 @@ textarea {
     height: 43px;
     line-height: 28px;
     min-width: 120px;
-}
-
-.btn:hover {
-    background-color: #13537e;
-    color: #fff;
 }
 
 .btn:active, .btn:focus {
@@ -756,6 +751,8 @@ textarea {
 #upl-modals {
     display: inline;
 }
+
+#upl-modals .btn {width: 100%;}
 
 #upl-modals .modal-body {
     /*height: 300px;*/

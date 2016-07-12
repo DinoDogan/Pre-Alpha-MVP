@@ -168,8 +168,14 @@ function bootstrapModal(args) {
     // CHOOSE FILES (STEP ONE)
     //
 
+    // reset progress bar here to
+    // avoid unnecessary CSS visuals
+    $("#upl-modal1").on("show.bs.modal", function () {
+        $progressBar.css({width: "0%"})
+    });
+
     $("#upl-modal1-browse").click(function () {
-        var $fileInput = $("<input>", {type: "file", multiple: "multiple", accept: ".pdf"});
+        var $fileInput = $("<input>", {type: "file", /*multiple: "multiple",*/ accept: ".pdf"});
         $fileInput.click();
 
         $fileInput.change(function () {
@@ -179,7 +185,7 @@ function bootstrapModal(args) {
 
             for (var i = 0; i < files.length; i++) {
 
-                if (files[i].type != "application/pdf") {
+                if (files[i].type != "application/pdf" || files[i].size > 25000000) {
                     validationComplete = false;
                     break;
                 }
@@ -190,7 +196,7 @@ function bootstrapModal(args) {
                 $("#upl-modal2").modal("show");
             }
             else {
-                alert("One or more files do not match type PDF. Please reselect files and try again.");
+                alert("Your file doesn't match type PDF or exceeds 25 MB. Please select another file and try again.");
             }
         });
     });
@@ -282,9 +288,16 @@ function bootstrapModal(args) {
                 var currentProgress = e.loaded / e.total;
                 $progressBar.css({width: Math.round(currentProgress * 100) + "%"});
             }).done(function (json) {
-                setTimeout(function () {
-                    $progressStatus.fadeHTML("Success!");
-                }, 200);
+
+                if (!json.error) {
+
+                    setTimeout(function () {
+                        $progressStatus.fadeHTML("Success!");
+                    }, 200);
+                }
+                else {
+                    $progressStatus.fadeHTML(json.error);
+                }
 
                 files = null;
             }).fail(function (e) {

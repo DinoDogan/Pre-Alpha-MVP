@@ -60,8 +60,8 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <p>
-                                    Choose files to upload to Magnificent. You can select more than one file at a time.
-                                    You can also drag and drop files anywhere on this page to start uploading.
+                                    Choose a PDF you would like Magnificent to process. Please choose a file
+                                    less than 25 MB so we can process your document as efficiently as possible.
                                 </p>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                             </div>
 
                             <div class="col-xs-3 text-right align-middle">
-                                <a class="btn btn-default" id="upl-modal1-browse">Choose Files</a>
+                                <a class="btn btn-default" id="upl-modal1-browse">Choose File</a>
                             </div>
                         </div>
                     </div>
