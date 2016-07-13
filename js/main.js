@@ -277,7 +277,7 @@ function bootstrapModal(args) {
             $progressBar.addClass("is-visible");
 
             $.customAjax({
-                url: "/api/upload.php",
+                url: "api/upload.php",
                 type: "POST",
                 dataType: "JSON",
                 data: formData,
