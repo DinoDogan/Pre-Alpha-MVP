@@ -557,11 +557,11 @@ body.home-style #footer-social > a:hover > i {
 .cloud-upload-src:before {
     position: absolute;
     content: "";
-    border: 24.5px solid transparent;
-    border-bottom-color: #fff;
-    top: 72.5px;
-    left: 94px;
-
+    background: url("../img/upload-arrow-white.png") no-repeat center;
+    width: 80px;
+    height: 80px;
+    top: 68px;
+    left: 78px;
     opacity: 0;
 }
 
@@ -589,8 +589,8 @@ body.home-style #footer-social > a:hover > i {
 }
 
 .cloud-upload-src:hover > span {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .cloud-arrow {
