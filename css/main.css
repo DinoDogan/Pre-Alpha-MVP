@@ -393,7 +393,7 @@ textarea {
     color: steelBlue;
 }
 
-/*-- css styles to color header and footer with #005493 (brand-blue) for white pages */
+/*-- css styles to color header and footer with steelBlue (brand-blue = steelBlue) for white pages */
 
 body.home-style #logo {
     color: #fff;
@@ -408,7 +408,7 @@ body.home-style #logo {
     font-size: 1rem;
     display: inline-block;
     margin-left: 47px;
-    color: #005493;
+    color: steelBlue;
 }
 
 #header-links > a:hover {
@@ -739,7 +739,7 @@ body.home-style #logo {
 
 #footer-links > a {
     font-size: .6rem;
-    color: #005493;
+    color: steelBlue;
     text-decoration: none;
     margin: 17px;
     font-weight: 400;
@@ -756,13 +756,13 @@ body.home-style #logo {
 
 #footer-social > a > i {
     font-size: 17px;
-    color: #005493;
+    color: steelBlue;
     display: inline-block;
     line-height: 36px;
     width: 38px;
     text-align: center;
     border-radius: 50%;
-    border: 1px solid #005493;
+    border: 1px solid steelBlue;
     margin-left: 60px;
 }
 
