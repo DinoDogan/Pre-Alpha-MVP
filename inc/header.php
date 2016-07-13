@@ -34,6 +34,8 @@
             <div id="header-links">
                 <?php
                 $script_name = substr($_SERVER["SCRIPT_NAME"], 1);
+
+                print_r($_SERVER);
                 ?>
                 <a href="about.php"<?php echo($script_name == "about.php" ? ' class="bold"' : ''); ?>>About</a>
                 <a href="faq.php"<?php echo($script_name == "faq.php" ? ' class="bold"' : ''); ?>>FAQ</a>
