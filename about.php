@@ -1,24 +1,19 @@
-<!-- Get header from header.php -->
+<?php
+$title = "About Us";
+include "inc/header.php"; ?>
 
-<?php include "inc/header.php"; ?>
-
-
-<!-- About section -->
-
-<section id="about">
-    <div class="content">
-        <p>
-            <strong>mag·nif·i·cent</strong><br>
-            adjective:
-        </p><p>
-            1. impressively beautiful, elaborate, or extravagant; striking.<br>
-            2. very good; excellent. <br>
-            3. extract and publish PDFs to WordPress.
-        </p>
-    </div>
-</section>
-
-
-<!-- Get footer from footer.php -->
+    <section id="about">
+        <div class="content">
+            <p>
+                <strong>mag·nif·i·cent</strong><br>
+                adjective:
+            </p>
+            <p>
+                1. impressively beautiful, elaborate, or extravagant; striking.<br>
+                2. very good; excellent. <br>
+                3. extract and publish PDFs to WordPress.
+            </p>
+        </div>
+    </section>
 
 <?php include "inc/footer.php"; ?>

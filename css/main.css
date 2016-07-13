@@ -1,4 +1,3 @@
-/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 /* ==========================================================================
    Font imports
    ========================================================================== */
@@ -6,218 +5,8 @@
 @import "../fonts/avenirnextpro/index.css";
 @import "../fonts/bevan/index.css";
 
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 /* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: none;
-}
-
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
-
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-/* ==========================================================================
-   Boostrap custom styles
-   ========================================================================== */
-.modal {
-    font-size: 1rem;
-}
-
-.modal-backdrop {
-    background: #1b2125;
-}
-
-.modal-backdrop.in {
-    opacity: .8;
-}
-
-.modal-dialog {
-    margin: 200px auto;
-    position: relative;
-}
-
-.modal-dialog-large {
-    width: 800px;
-}
-
-.modal-header {
-    padding: 35px 40px;
-    height: 96px;
-}
-
-.modal-header-hint {
-    float: right;
-    font-size: 23px;
-    display: inline-block;
-
-    line-height: 28px;
-    width: 30px;
-
-    color: #ddd;
-    text-align: center;
-
-    cursor: pointer;
-}
-
-.modal-header-hint:hover {
-    color: #222;
-}
-
-.modal-body {
-    padding: 40px 32px;
-    overflow: auto;
-}
-
-.modal-footer {
-    padding: 20px 40px;
-}
-
-.modal-content {
-    border-radius: 0;
-    border: none;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-@-webkit-keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-}
-
-.modal-content--help {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    -webkit-animation: fade-in .2s ease;
-    animation: fade-in .2s ease;
-}
-
-.row {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 2px;
-}
-
-.btn {
-    background: #13537e;
-    border-radius: 0;
-    text-shadow: none;
-    color: #fff;
-    border: none;
-    box-shadow: none;
-    padding: 9px 10px;
-    text-align: center;
-
-    font-size: .9rem;
-    font-weight: 300;
-
-    height: 43px;
-    line-height: 28px;
-    min-width: 120px;
-}
-
-.btn:active, .btn:focus {
-    background-color: #000 !important;
-    box-shadow: none;
-    color: #fff !important;
-}
-
-.xs {
-    font-size: .8rem;
-}
-
-/* ==========================================================================
-   Author's custom styles
+   Generic
    ========================================================================== */
 
 * {
@@ -244,13 +33,45 @@ body {
     font-size: 0;
     height: 100%;
     min-width: 1000px;
+    color: #4682b4;
 }
 
-section {
-    min-height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 200px 0;
+body.home-style {
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 input,
@@ -266,6 +87,11 @@ textarea {
     padding: 12px 14px;
     margin: 8px 0;
     outline: none;
+    text-align: left;
+}
+
+textarea {
+    resize: none;
 }
 
 input:focus,
@@ -273,9 +99,42 @@ textarea:focus {
     border-color: #ccc;
 }
 
-textarea {
-    height: 100px;
-    text-align: left;
+section {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+}
+
+/* ==========================================================================
+   Custom Animations
+   ========================================================================== */
+
+@-webkit-keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   Classes
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.xs {
+    font-size: .8rem;
 }
 
 .content {
@@ -289,6 +148,80 @@ textarea {
     display: inline-block;
     float: none;
     margin: -2px;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
 }
 
 .hint {
@@ -341,6 +274,110 @@ textarea {
 }
 
 /* ==========================================================================
+   Boostrap custom styles
+   ========================================================================== */
+
+.modal {
+    font-size: 1rem;
+}
+
+.modal-backdrop {
+    background: #1b2125;
+}
+
+.modal-backdrop.in {
+    opacity: .8;
+}
+
+.modal-dialog {
+    margin: 100px auto;
+    position: relative;
+}
+
+.modal-dialog-large {
+    width: 800px;
+}
+
+.modal-header {
+    padding: 35px 40px;
+    height: 96px;
+}
+
+.modal-header-hint {
+    float: right;
+    font-size: 23px;
+    display: inline-block;
+
+    line-height: 28px;
+    width: 30px;
+
+    color: #ddd;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.modal-header-hint:hover {
+    color: #222;
+}
+
+.modal-body {
+    padding: 40px 32px;
+    overflow: auto;
+}
+
+.modal-footer {
+    padding: 20px 40px;
+}
+
+.modal-content {
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content--help {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    -webkit-animation: fade-in .2s ease;
+    animation: fade-in .2s ease;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2px;
+}
+
+.btn {
+    background: #13537e;
+    border-radius: 0;
+    text-shadow: none;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    padding: 9px 10px;
+    text-align: center;
+
+    font-size: .9rem;
+    font-weight: 300;
+
+    height: 43px;
+    line-height: 28px;
+    min-width: 120px;
+}
+
+.btn:active, .btn:focus {
+    background-color: #000 !important;
+    box-shadow: none;
+    color: #fff !important;
+}
+
+/* ==========================================================================
    Header
    ========================================================================== */
 
@@ -350,30 +387,17 @@ textarea {
     left: 0;
     right: 0;
     z-index: 1000;
-
-    color: #fff;
-
-    -webkit-transition: color 1s ease, text-shadow 1s ease, background-color 1s ease;
-    transition: color 1s ease, text-shadow 1s ease, background-color 1s ease;
-
-    /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
+    background: #fff;
+    border-bottom: 1px solid #eee;
 }
 
-/* override child styles so we don't get a double animation */
-#header * {
-    -webkit-transition-duration: 0s;
-    transition-duration: 0s;
-}
-
-#header.header--blue {
-    color: #004370;
-    text-shadow: none;
-    background: rgba(255, 255, 255, 0.5);
+body.home-style #header {
+    background: transparent;
+    border-bottom: none;
 }
 
 #header a {
     text-decoration: none;
-    color: inherit;
 }
 
 #header-left,
@@ -384,13 +408,14 @@ textarea {
 }
 
 #logo {
-    font-family: Bevan;
+    font-family: Bevan, sans-serif;
     font-size: 37px;
-    color: #005493;
+    color: #4682b4;
+    margin-left: -2px;
 }
 
 #logo:hover {
-    color: steelBlue;
+    color: #004370;
 }
 
 /*-- css styles to color header and footer with steelBlue (brand-blue = steelBlue) for white pages */
@@ -408,15 +433,83 @@ body.home-style #logo {
     font-size: 1rem;
     display: inline-block;
     margin-left: 47px;
-    color: steelBlue;
+    color: #4682b4;
 }
 
 #header-links > a:hover {
-    color: steelBlue;
+    color: #004370;
+}
+
+body.home-style #header-links > a:hover {
+    color: #fff;
 }
 
 /* ==========================================================================
-   Home Section
+   Footer
+   ========================================================================== */
+
+#footer {
+    margin-top: -99px;
+    padding: 30px 0;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid #eee;
+}
+
+body.home-style #footer {
+    border-top: none;
+}
+
+#footer-links,
+#footer-social {
+    display: inline-block;
+    width: 50%;
+}
+
+#footer-links > a {
+    font-size: .6rem;
+    color: #4682b4;
+    text-decoration: none;
+    margin: 17px;
+    font-weight: 400;
+}
+
+#footer-links > a:hover {
+    color: #004370;
+}
+
+body.home-style #footer-links > a:hover {
+    color: #fff;
+}
+
+#footer-social {
+    text-align: right;
+}
+
+#footer-social > a > i {
+    font-size: 17px;
+    color: #4682b4;
+    display: inline-block;
+    line-height: 36px;
+    width: 38px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #4682b4;
+    margin-left: 60px;
+}
+
+#footer-social > a:hover > i {
+    border-color: #004370;
+    color: #004370;
+}
+
+body.home-style #footer-social > a:hover > i {
+    border-color: #fff;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Home Page
    ========================================================================== */
 
 #home {
@@ -463,11 +556,6 @@ body.home-style #logo {
     white-space: nowrap;
     overflow: hidden;
 }
-
-/*.cloud-upload > img {*/
-/*width: 100%;*/
-
-/*}*/
 
 .cloud-arrow {
     text-align: right;
@@ -540,34 +628,30 @@ body.home-style #logo {
 }
 
 /* ==========================================================================
-   About Section
+   About Page
    ========================================================================== */
 
 #about {
     font-size: 1.2rem;
-    color: #004370;
-
 }
 
 /* ==========================================================================
-   FAQ Section
+   FAQ Page
    ========================================================================== */
 
 #faq {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #004370;
     margin-top: 100px;
 }
 
 .faq-question:before,
 .faq-answer:before {
-    font-family: Bevan;
-    font-size: 37px;
-
+    font-family: Bevan, sans-serif;
+    font-size: 32px;
     position: absolute;
-    top: -25px;
-    left: 0;
+    top: -19px;
+    left: 4px;
 }
 
 .faq-question:before {
@@ -579,7 +663,7 @@ body.home-style #logo {
 }
 
 .faq-question, .faq-answer {
-    padding-left: 55px;
+    padding-left: 54px;
     position: relative;
 }
 
@@ -588,7 +672,7 @@ body.home-style #logo {
 }
 
 /* ==========================================================================
-   Contact Section
+   Contact Page
    ========================================================================== */
 
 #contact {
@@ -606,16 +690,28 @@ body.home-style #logo {
     font-size: 1.8rem;
     color: #000;
     margin: 8px 0;
-    padding: 10px 28px;
+    padding: 0 28px;
     background: #fff;
     border: 1px solid #ccc;
     outline: none;
     text-align: left;
+
+    /* wonky font line-height hack */
+    height: 70px;
+    padding-top: 5px;
+}
+
+#contact-form textarea {
+    padding-top: 15px;
+}
+
+#contact-form input:hover,
+#contact-form textarea:hover {
+    border-color: #4682b4;
 }
 
 #contact-form input:focus,
-#contact-form textarea:focus,
-#contact-form button:focus {
+#contact-form textarea:focus {
     border-color: #004370;
 }
 
@@ -637,9 +733,14 @@ body.home-style #logo {
 
 #contact-form button {
     width: 100%;
-    background: #004370;
+    background: #4682b4;
+    border: none;
     color: #fff;
     text-align: center;
+}
+
+#contact-form button:hover {
+    background-color: #004370;
 }
 
 #contact-form-overlay {
@@ -722,56 +823,6 @@ body.home-style #logo {
 }
 
 /* ==========================================================================
-   Footer
-   ========================================================================== */
-
-#footer {
-    margin-top: -80px;
-    position: relative;
-    z-index: 2;
-}
-
-#footer-links,
-#footer-social {
-    display: inline-block;
-    width: 50%;
-}
-
-#footer-links > a {
-    font-size: .6rem;
-    color: steelBlue;
-    text-decoration: none;
-    margin: 17px;
-    font-weight: 400;
-
-}
-
-#footer-links > a:hover {
-    color: steelBlue;
-}
-
-#footer-social {
-    text-align: right;
-}
-
-#footer-social > a > i {
-    font-size: 17px;
-    color: steelBlue;
-    display: inline-block;
-    line-height: 36px;
-    width: 38px;
-    text-align: center;
-    border-radius: 50%;
-    border: 1px solid steelBlue;
-    margin-left: 60px;
-}
-
-#footer-social > a:hover > i {
-    border-color: steelBlue;
-    color: steelBlue;
-}
-
-/* ==========================================================================
    Upload Modals
    ========================================================================== */
 
@@ -842,80 +893,6 @@ body.home-style #logo {
 #upl-modal5-icons > a:hover > i {
     background-color: #ddd;
     color: #222;
-}
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden {
-    display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
 }
 
 /* ==========================================================================

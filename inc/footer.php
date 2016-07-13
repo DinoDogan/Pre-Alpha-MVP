@@ -1,11 +1,11 @@
         <!-- Footer-Home sections -->
 
-        <div class="content">
-            <div id="footer">
+        <div id="footer">
+            <div class="content">
                 <div id="footer-links">
-                    <a href="#company">Company</a>
-                    <a href="#services">Services</a>
-                    <a href="#blog">Blog</a>
+                    <a href="http://www.magnificent.com/">Company</a>
+                    <a href="http://www.magnificent.com/facebook-marketing/">Services</a>
+                    <a href="http://www.magnificent.com/magnificent-stuff/">Blog</a>
                     <a href="tos.html">TOS</a>
                 </div>
                 <div id="footer-social">
