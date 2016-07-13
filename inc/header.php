@@ -33,13 +33,13 @@
         <div id="header-right">
             <div id="header-links">
                 <?php
-                $script_name = substr($_SERVER["SCRIPT_NAME"], 1);
-
-                print_r($_SERVER);
+                // strip stuff down so we don't have to worry about serving
+                // project from different directories.
+                $script_name = pathinfo($_SERVER["SCRIPT_NAME"], PATHINFO_FILENAME);
                 ?>
-                <a href="about.php"<?php echo($script_name == "about.php" ? ' class="bold"' : ''); ?>>About</a>
-                <a href="faq.php"<?php echo($script_name == "faq.php" ? ' class="bold"' : ''); ?>>FAQ</a>
-                <a href="contact.php"<?php echo($script_name == "contact.php" ? ' class="bold"' : ''); ?>>Contact</a>
+                <a href="about.php"<?php echo($script_name == "about" ? ' class="bold"' : ''); ?>>About</a>
+                <a href="faq.php"<?php echo($script_name == "faq" ? ' class="bold"' : ''); ?>>FAQ</a>
+                <a href="contact.php"<?php echo($script_name == "contact" ? ' class="bold"' : ''); ?>>Contact</a>
             </div>
         </div>
     </div>
