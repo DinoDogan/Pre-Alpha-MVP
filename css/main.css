@@ -543,8 +543,35 @@ body.home-style #footer-social > a:hover > i {
     cursor: pointer;
 }
 
+.cloud-upload-src,
+.cloud-upload-src:before,
+.cloud-upload-src > span {
+    -webkit-transition: .2s ease;
+    transition: .2s ease;
+}
+
 .cloud-upload-src {
     position: relative;
+}
+
+.cloud-upload-src:before {
+    position: absolute;
+    content: "";
+    border: 24.5px solid transparent;
+    border-bottom-color: #fff;
+    top: 72.5px;
+    left: 94px;
+
+    opacity: 0;
+}
+
+.cloud-upload-src:hover:before {
+    opacity: 1;
+}
+
+.cloud-upload-src:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .cloud-upload-src > span {
@@ -556,6 +583,14 @@ body.home-style #footer-social > a:hover > i {
 
     white-space: nowrap;
     overflow: hidden;
+
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.cloud-upload-src:hover > span {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .cloud-arrow {
