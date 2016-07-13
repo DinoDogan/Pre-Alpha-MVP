@@ -1,5 +1,4 @@
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
-
 /* ==========================================================================
    Font imports
    ========================================================================== */
@@ -160,8 +159,17 @@ textarea {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
-@-webkit-keyframes fade-in {from{opacity:0;}}
-@keyframes fade-in {from{opacity: 0;}}
+@-webkit-keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
 
 .modal-content--help {
     position: absolute;
@@ -336,7 +344,6 @@ textarea {
    Header
    ========================================================================== */
 
-
 #header {
     position: fixed;
     top: 0;
@@ -386,6 +393,12 @@ textarea {
     color: steelBlue;
 }
 
+/*-- css styles to color header and footer with #005493 (brand-blue) for white pages */
+
+body.home-style #logo {
+    color: #fff;
+}
+
 #header-right {
     text-align: right;
     font-weight: 300;
@@ -402,20 +415,9 @@ textarea {
     color: steelBlue;
 }
 
-
-/*-- css styles to color header and footer with #005493 (brand-blue) for white pages */
-
-body.home-style #logo > a {
-    color: white;
-}
-
-
-
-
 /* ==========================================================================
    Home Section
    ========================================================================== */
-
 
 #home {
     position: relative;
@@ -541,7 +543,6 @@ body.home-style #logo > a {
    About Section
    ========================================================================== */
 
-
 #about {
     font-size: 1.2rem;
     color: #004370;
@@ -551,7 +552,6 @@ body.home-style #logo > a {
 /* ==========================================================================
    FAQ Section
    ========================================================================== */
-
 
 #faq {
     font-size: 1.1rem;
@@ -591,8 +591,8 @@ body.home-style #logo > a {
    Contact Section
    ========================================================================== */
 
-
-#contact {}
+#contact {
+}
 
 #contact-form {
     position: relative;
@@ -625,7 +625,9 @@ body.home-style #logo > a {
 }
 
 /* spacing for first input */
-#contact-form input:first-child {margin-right: 2%;}
+#contact-form input:first-child {
+    margin-right: 2%;
+}
 
 #contact-form textarea {
     width: 100%;
@@ -642,7 +644,10 @@ body.home-style #logo > a {
 
 #contact-form-overlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: #fff;
 
     -webkit-transition: .5s ease;
@@ -664,7 +669,9 @@ body.home-style #logo > a {
 
 #contact-form-overlay > span {
     position: absolute;
-    top: 50%; left: 0; right: 0;
+    top: 50%;
+    left: 0;
+    right: 0;
     text-align: center;
     font-size: 2rem;
     font-weight: 200;
@@ -673,23 +680,37 @@ body.home-style #logo > a {
 }
 
 @-webkit-keyframes contact-form-overlay-icon {
-    0% {-webkit-transform: scale(0.8); opacity: 0;}
-    60% {-webkit-transform: scale(1.2);}
-    100% {-webkit-transform: scale(1);}
+    0% {
+        -webkit-transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        -webkit-transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
 }
 
-
 @keyframes contact-form-overlay-icon {
-    0% {transform: scale(0.8); opacity: 0;}
-    60% {transform: scale(1.2);}
-    100% {transform: scale(1);}
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 #contact-form-overlay > span > i {
     color: #004370;
     font-size: 60px;
     display: block;
-    line-height: 100px; width: 100px;
+    line-height: 100px;
+    width: 100px;
     border-radius: 50%;
     background: #eee;
     margin: 10px auto;
@@ -700,7 +721,6 @@ body.home-style #logo > a {
     animation: contact-form-overlay-icon .5s ease;
 }
 
-
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -710,7 +730,6 @@ body.home-style #logo > a {
     position: relative;
     z-index: 2;
 }
-
 
 #footer-links,
 #footer-social {
@@ -747,8 +766,6 @@ body.home-style #logo > a {
     margin-left: 60px;
 }
 
-
-
 #footer-social > a:hover > i {
     border-color: steelBlue;
     color: steelBlue;
@@ -762,7 +779,9 @@ body.home-style #logo > a {
     display: inline;
 }
 
-#upl-modals .btn {width: 100%;}
+#upl-modals .btn {
+    width: 100%;
+}
 
 #upl-modals .modal-body {
     /*height: 300px;*/
