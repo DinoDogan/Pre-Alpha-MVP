@@ -2,6 +2,7 @@
 
 <?php include "inc/header.php"; ?>
 
+
 <!-- About section -->
 
 <section id="about">

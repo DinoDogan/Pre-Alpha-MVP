@@ -1,6 +1,8 @@
 <!-- Get header from header.php -->
 
+<?php $home_style=true; ?>
 <?php include "inc/header.php"; ?>
+
 
 <section id="home">
     <div class="home-background"></div>
