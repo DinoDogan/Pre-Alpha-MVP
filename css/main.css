@@ -30,7 +30,7 @@ html {
 }
 
 body, #header {
-    min-width: 1000px;
+    min-width: 300px;
 }
 
 body {
@@ -422,6 +422,11 @@ body.home-style #header {
     color: #4682b4;
     margin-left: -2px;
 }
+
+#logo:after {
+    content: "Magnificent";
+}
+
 
 #logo:hover {
     color: #004370;
@@ -1032,5 +1037,28 @@ body.home-style #footer-social > a:hover > i {
     h2,
     h3 {
         page-break-after: avoid;
+    }
+}
+
+
+
+/* ==========================================================================
+   Styles for tablet and mobile devices
+   ========================================================================== */
+
+
+@media screen and (max-width: 999px) {
+    #logo:after {
+        content: "M";
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #header-left,
+    #header-right {
+        display: block;
+        width: 100%;
+        text-align: center;
+    .navbar-collapse
     }
 }

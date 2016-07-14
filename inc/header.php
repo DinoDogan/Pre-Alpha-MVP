@@ -27,7 +27,7 @@
     <div class="content">
         <div id="header-left">
             <a href="index.php">
-                <div id="logo">Magnificent</div>
+                <div id="logo"></div>
             </a>
         </div>
         <div id="header-right">
