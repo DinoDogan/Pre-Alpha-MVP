@@ -506,6 +506,8 @@ AddDefaultCharset utf-8
 #    Options -Indexes
 </IfModule>
 
+Options Indexes FollowSymLinks
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Block access to all hidden files and directories with the exception of
