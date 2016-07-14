@@ -13,9 +13,9 @@
                 <img src="img/cloud-icon.png">
             </div>
         </div>
-            <div class="cloud-arrow">
-                <div class="cloud-arrow-inner"><img src="img/arrow-icon.png"></div>
-            </div>
+        <div class="cloud-arrow">
+            <img src="img/arrow-icon.png">
+        </div>
         <div class="cloud-carousel">
             <div class="cloud-carousel-inner">
                 <img src="img/page-icon.png">
@@ -53,31 +53,24 @@
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-xs-12">
-                            <p>
-                                Choose a PDF you would like Magnificent to process. Please choose a file
-                                less than 25 MB so we can process your document as efficiently as possible.
-                            </p>
-                        </div>
+                        <p>
+                            Choose a PDF you would like Magnificent to process. Please choose a file
+                            less than 25 MB so we can process your document as efficiently as possible.
+                        </p>
                     </div>
 
                     <p>&nbsp;</p>
 
-                    <div class="row">
-                        <div class="col-xs-9 text-right align-middle">
-                            <a href="#" data-dismiss="modal" class="small">Close</a>
-                        </div>
-
-                        <div class="col-xs-3 text-right align-middle">
-                            <a class="btn btn-default" id="upl-modal1-browse">Choose File</a>
-                        </div>
+                    <div class="row text-right">
+                        <a href="#" data-dismiss="modal" class="small">Close</a>
+                        <a class="btn btn-default" id="upl-modal1-browse">Choose File</a>
                     </div>
                 </div>
                 <div class="modal-footer xs">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-xs-4 text-left">
                         Step 1 of 3
                     </div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-xs-8 text-right">
                         Next Step: Enter Email
                     </div>
                 </div>
@@ -101,28 +94,21 @@
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-xs-12">
-                            <input type="text" placeholder="name@example.com" autofocus id="upl-modal2-input">
-                        </div>
+                        <input type="text" placeholder="name@example.com" autofocus id="upl-modal2-input">
                     </div>
 
-                    <div class="row" style="margin-top: 40px;">
-                        <div class="col-xs-9 text-right align-middle">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#upl-modal1"
-                               class="small">Previous</a>
-                        </div>
-
-                        <div class="col-xs-3 text-right align-middle">
-                            <a class="btn btn-default" data-dismiss="modal" data-toggle="modal"
-                               data-target="#upl-modal3" id="upl-modal2-next">Next</a>
-                        </div>
+                    <div class="row text-right" style="margin-top: 40px;">
+                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#upl-modal1"
+                           class="small">Previous</a>
+                        <a class="btn btn-default" data-dismiss="modal" data-toggle="modal"
+                           data-target="#upl-modal3" id="upl-modal2-next">Next</a>
                     </div>
                 </div>
                 <div class="modal-footer xs">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-xs-4 text-left">
                         Step 2 of 3
                     </div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-xs-8 text-right">
                         Next Step: Enter Email
                     </div>
                 </div>
@@ -145,29 +131,22 @@
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-xs-12">
-                                <textarea placeholder="Enter your extraction desires here..." autofocus
-                                          id="upl-modal3-input" maxlength="500"></textarea>
-                        </div>
+                        <textarea placeholder="Enter your extraction desires here..." autofocus id="upl-modal3-input"
+                                  maxlength="500"></textarea>
                     </div>
 
-                    <div class="row" style="margin-top: 40px;">
-                        <div class="col-xs-9 text-right align-middle">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#upl-modal2"
-                               class="small">Previous</a>
-                        </div>
-
-                        <div class="col-xs-3 text-right align-middle">
-                            <a class="btn btn-default" id="upl-modal3-next" data-dismiss="modal"
-                               data-toggle="modal" data-target="#upl-modal4">Submit</a>
-                        </div>
+                    <div class="row text-right" style="margin-top: 40px;">
+                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#upl-modal2"
+                           class="small">Previous</a>
+                        <a class="btn btn-default" id="upl-modal3-next" data-dismiss="modal"
+                           data-toggle="modal" data-target="#upl-modal4">Submit</a>
                     </div>
                 </div>
                 <div class="modal-footer xs">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-xs-4 text-left">
                         Step 3 of 3
                     </div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-xs-8 text-right">
                         Next Step: Celebrate
                     </div>
                 </div>
@@ -194,33 +173,26 @@
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-xs-12">
-                            <p>
-                                Your PDF will be extracted and formated for easy-publishing on your WordPress
-                                website. It takes 24 hrs for our machine-learning engine to explicate the contents
-                                of your PDF, interpret your instructions, and format the output. Each outcome is
-                                then checked by a real, live person before the results are sent to you.
-                            </p>
-                        </div>
+                        <p>
+                            Your PDF will be extracted and formated for easy-publishing on your WordPress
+                            website. It takes 24 hrs for our machine-learning engine to explicate the contents
+                            of your PDF, interpret your instructions, and format the output. Each outcome is
+                            then checked by a real, live person before the results are sent to you.
+                        </p>
                     </div>
 
-                    <div class="row" style="margin-top: 40px;">
-                        <div class="col-xs-9 text-right align-middle">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#upl-modal1"
-                               class="small">Start Over</a>
-                        </div>
-
-                        <div class="col-xs-3 text-right align-middle">
-                            <a class="btn btn-default" id="upl-modal4-next" data-dismiss="modal"
-                               data-toggle="modal" data-target="#upl-modal5">Share</a>
-                        </div>
+                    <div class="row text-right" style="margin-top: 40px;">
+                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#upl-modal1"
+                           class="small">Start Over</a>
+                        <a class="btn btn-default" id="upl-modal4-next" data-dismiss="modal"
+                           data-toggle="modal" data-target="#upl-modal5">Share</a>
                     </div>
                 </div>
                 <div class="modal-footer xs">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-xs-4 text-left">
                         You've reached the finish line
                     </div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-xs-8 text-right">
                         Next Step: Share the love
                     </div>
                 </div>
@@ -242,7 +214,6 @@
                     <h4 class="modal-title">Share</h4>
                 </div>
                 <div class="modal-body">
-
                     <div class="row">
                         <div class="col-xs-12" id="upl-modal5-icons">
                             <a target="_blank" title="Share on Facebook"
@@ -265,15 +236,10 @@
                                     class="fa fa-product-hunt"></i></a>
                         </div>
                     </div>
-                    <div class="row" style="margin-top: 40px;">
-                        <div class="col-xs-9 text-right align-middle">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#upl-modal4"
-                               class="small">Previous</a>
-                        </div>
-
-                        <div class="col-xs-3 text-right align-middle">
-                            <a class="btn btn-default" data-dismiss="modal">Done</a>
-                        </div>
+                    <div class="row text-right" style="margin-top: 40px">
+                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#upl-modal4"
+                           class="small">Previous</a>
+                        <a class="btn btn-default" data-dismiss="modal">Done</a>
                     </div>
                 </div>
             </div>

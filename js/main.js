@@ -89,6 +89,19 @@ function bootstrapModal(args) {
 }
 
 /**
+ * Nav bar
+ */
+(function () {
+    var $header = $("#header");
+    
+    $("#header-nav").on("show.bs.collapse", function () {
+        $header.addClass("nav-open");
+    }).on("hide.bs.collapse", function () {
+        $header.removeClass("nav-open");
+    });
+}());
+
+/**
  * Hero cloud carousel
  */
 
