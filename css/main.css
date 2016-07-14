@@ -159,7 +159,7 @@ section {
 }
 
 .bold {
-    font-weight: 500;
+    font-weight: 500 !important;
 }
 
 /*
@@ -284,6 +284,15 @@ section {
 /* ==========================================================================
    Boostrap custom styles
    ========================================================================== */
+.navbar {
+    background: transparent;
+    border: none;
+    margin: 0;
+}
+
+.navbar-collapse {
+    border: none;
+}
 
 .modal {
     font-size: 1rem;
@@ -398,6 +407,7 @@ section {
     z-index: 1000;
     background: #fff;
     border-bottom: 1px solid #eee;
+    /*padding: 30px 0;*/
 }
 
 body.home-style #header {
@@ -405,14 +415,21 @@ body.home-style #header {
     border-bottom: none;
 }
 
+body.home-style .navbar-toggle {
+    border: none;
+    background: transparent !important;
+}
+
+body.home-style .navbar-toggle .icon-bar {
+    background: #fff;
+}
+
 #header a {
     text-decoration: none;
 }
 
-#header-left,
-#header-right {
-    display: inline-block;
-    width: 50%;
+#header-brand,
+#header-links {
     padding: 30px 0;
 }
 
@@ -427,7 +444,6 @@ body.home-style #header {
     content: "Magnificent";
 }
 
-
 #logo:hover {
     color: #004370;
 }
@@ -438,23 +454,19 @@ body.home-style #logo {
     color: #fff;
 }
 
-#header-right {
-    text-align: right;
-    font-weight: 300;
-}
-
-#header-links > a {
+#header-links a {
     font-size: 1rem;
+    font-weight: 300;
     display: inline-block;
-    margin-left: 47px;
+    /*margin-left: 47px;*/
     color: #4682b4;
 }
 
-#header-links > a:hover {
+#header-links a:hover {
     color: #004370;
 }
 
-body.home-style #header-links > a:hover {
+body.home-style #header-links a:hover {
     color: #fff;
 }
 
@@ -1040,16 +1052,19 @@ body.home-style #footer-social > a:hover > i {
     }
 }
 
-
-
 /* ==========================================================================
    Styles for tablet and mobile devices
    ========================================================================== */
 
-
 @media screen and (max-width: 999px) {
     #logo:after {
         content: "M";
+    }
+}
+
+@media (max-width: 767px) {
+    #header-links {
+        padding-top: 0;
     }
 }
 
@@ -1059,6 +1074,6 @@ body.home-style #footer-social > a:hover > i {
         display: block;
         width: 100%;
         text-align: center;
-    .navbar-collapse
+    . navbar-collapse
     }
 }

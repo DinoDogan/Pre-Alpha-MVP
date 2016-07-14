@@ -23,24 +23,40 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
+
 <div id="header">
     <div class="content">
-        <div id="header-left">
-            <a href="index.php">
-                <div id="logo"></div>
-            </a>
-        </div>
-        <div id="header-right">
-            <div id="header-links">
-                <?php
-                // strip stuff down so we don't have to worry about serving
-                // project from different directories.
-                $script_name = pathinfo($_SERVER["SCRIPT_NAME"], PATHINFO_FILENAME);
-                ?>
-                <a href="about.php"<?php echo($script_name == "about" ? ' class="bold"' : ''); ?>>About</a>
-                <a href="faq.php"<?php echo($script_name == "faq" ? ' class="bold"' : ''); ?>>FAQ</a>
-                <a href="contact.php"<?php echo($script_name == "contact" ? ' class="bold"' : ''); ?>>Contact</a>
+        <nav class="navbar navbar-default text">
+
+            <div class="navbar-header" id="header-brand">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#header-nav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/">
+                    <div id="logo"></div>
+                </a>
             </div>
-        </div>
+
+            <div class="collapse navbar-collapse" id="header-nav">
+                <ul class="nav navbar-nav navbar-right" id="header-links">
+                    <?php
+                    // strip stuff down so we don't have to worry about serving
+                    // project from different directories.
+                    $script_name = pathinfo($_SERVER["SCRIPT_NAME"], PATHINFO_FILENAME);
+                    ?>
+                    <li><a href="about.php"<?php echo($script_name == "about" ? ' class="bold"' : ''); ?>>About</a>
+                    </li>
+                    <li><a href="faq.php"<?php echo($script_name == "faq" ? ' class="bold"' : ''); ?>>FAQ</a></li>
+                    <li>
+                        <a href="contact.php"<?php echo($script_name == "contact" ? ' class="bold"' : ''); ?>>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 </div>
