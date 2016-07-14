@@ -40,10 +40,18 @@
             <a href="http://www.magnificent.com/" target="_blank">Company</a>
             <a href="http://www.magnificent.com/facebook-marketing/" target="_blank">Services</a>
             <a href="http://www.magnificent.com/magnificent-stuff/" target="_blank">Blog</a>
-            <style="color:#005493"><strong>TOS</strong>
+            <strong style="color:#005493">TOS</strong>
         </div>
         <div id="hdr-overlay-right">
-            <a href="index.php"><i class="fa fa-times" aria-hidden="true"></i></a>
+            <a href="<?php
+            
+            $from_url = filter_input(INPUT_GET, "from");
+
+            if ($from_url == "")
+                $from_url = "index.php";
+
+            echo $from_url;
+            ?>"><i class="fa fa-times" aria-hidden="true"></i></a>
         </div>
     </div>
 
@@ -236,9 +244,9 @@
     (function (b, o, i, l, e, r) {
         b.GoogleAnalyticsObject = l;
         b[l] || (b[l] =
-                function () {
-                    (b[l].q = b[l].q || []).push(arguments)
-                });
+            function () {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
         b[l].l = +new Date;
         e = o.createElement(i);
         r = o.getElementsByTagName(i)[0];
