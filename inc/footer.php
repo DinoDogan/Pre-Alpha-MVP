@@ -6,7 +6,7 @@
                     <a href="http://www.magnificent.com/">Company</a>
                     <a href="http://www.magnificent.com/facebook-marketing/">Services</a>
                     <a href="http://www.magnificent.com/magnificent-stuff/">Blog</a>
-                    <a href="tos.html">TOS</a>
+                    <a href="tos.php?from=<?php echo rawurlencode($_SERVER["REQUEST_URI"]); ?>">TOS</a>
                 </div>
                 <div id="footer-social">
                     <a href="https://twitter.com/MagnificentMktg" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
