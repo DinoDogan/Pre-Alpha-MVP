@@ -292,6 +292,7 @@ section {
 
 .navbar-collapse {
     border: none;
+    box-shadow: none;
 }
 
 .modal {
@@ -458,7 +459,7 @@ body.home-style #logo {
     font-size: 1rem;
     font-weight: 300;
     display: inline-block;
-    /*margin-left: 47px;*/
+    margin-left: 47px;
     color: #4682b4;
 }
 
@@ -1066,6 +1067,8 @@ body.home-style #footer-social > a:hover > i {
     #header-links {
         padding-top: 0;
     }
+
+    #header-links a {margin-bottom: 10px;}
 }
 
 @media screen and (max-width: 700px) {
