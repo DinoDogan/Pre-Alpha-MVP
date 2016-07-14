@@ -623,9 +623,17 @@ body.home-style #footer-social > a:hover > i {
     text-align: right;
 }
 
-.cloud-arrow > img {
+.cloud-arrow-inner {
+    display: inline-block;
+}
+
+.cloud-arrow-inner > img {
     margin-top: -25px;
 }
+
+
+
+
 
 .cloud-carousel {
     text-align: right;
@@ -1068,15 +1076,9 @@ body.home-style #footer-social > a:hover > i {
         padding-top: 0;
     }
 
-    #header-links a {margin-bottom: 10px;}
+    #header-links a {margin-bottom: 10px;
+    }
+
+
 }
 
-@media screen and (max-width: 700px) {
-    #header-left,
-    #header-right {
-        display: block;
-        width: 100%;
-        text-align: center;
-    . navbar-collapse
-    }
-}
