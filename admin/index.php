@@ -73,6 +73,7 @@
             text-align: left;
             border-spacing: 0;
             font-size: 0;
+            width: 100%;
         }
 
         #uploads-table tr {
@@ -230,6 +231,8 @@
                     if ($upload_entry) {
 
                         $pdf_path = "../db/uploads/' . $upload_entry->id . '.pdf";
+
+                        echo $pdf_path;
 
                         if (is_file($pdf_path)) {
                             ob_end_clean();
