@@ -167,7 +167,7 @@
                         $uploads_db_path = $uploads_dir . "db.xml";
 
                         if (!is_file($uploads_db_path))
-                            file_put_contents($uploads_db_path, "");
+                            file_put_contents($uploads_db_path, '<?xml version="1.0"?><uploads></uploads>');
 
                         $uploads = simplexml_load_file($uploads_db_path) or die("Can't load database");
 
@@ -238,10 +238,7 @@
                                 $upload_entry = load_upload($id);
 
                                 if ($upload_entry) {
-
                                     $pdf_path = "../db/uploads/" . $upload_entry->id . ".pdf";
-
-                                    echo $pdf_path;
 
                                     if (is_file($pdf_path)) {
                                         ob_end_clean();
@@ -269,7 +266,7 @@
                                 if ($upload_entry) {
 
                                     $to_delete = "../db/uploads/" . $upload_entry->id . ".pdf";
-//                        unset($upload_entry[0]);
+                                    // unset($upload_entry[0]);
 
                                     if (unlink($to_delete)/* && $uploads->asXML("../db/uploads/db.xml")*/) {
                                         echo '<p>File deleted.</p>'
