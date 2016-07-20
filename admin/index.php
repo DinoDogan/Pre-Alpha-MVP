@@ -159,163 +159,161 @@
                             return filter_input(INPUT_POST, $var);
                         }
 
-                        $uploads_dir = "../db/uploads/";
+                        $uploads_db_path = "../db/uploads/db.xml";
 
-                        if (!is_dir($uploads_dir))
-                            mkdir($uploads_dir);
+                        $uploads = simplexml_load_file($uploads_db_path);
 
-                        $uploads_db_path = $uploads_dir . "db.xml";
+                        if ($uploads !== false) {
 
-                        if (!is_file($uploads_db_path))
-                            file_put_contents($uploads_db_path, '<?xml version="1.0"?><uploads></uploads>');
+                            /**
+                             * Index IDs vs. actual IDs
+                             *
+                             * Internally, our IDs are just a pointer
+                             * to an entry in the XML (from 0 to infinity).
+                             *
+                             * Then, each XML has an actual id property which
+                             * points to a file. Keep this in mind.
+                             *
+                             * Index IDs (indices) change as entries are deleted.
+                             * Actual IDs don't.
+                             */
+                            function load_upload($id)
+                            {
+                                global $uploads;
 
-                        $uploads = simplexml_load_file($uploads_db_path) or die("Can't load database");
+                                if (is_numeric($id)) {
+                                    return $uploads->file[(int)$id];
+                                } else {
+                                    return false;
+                                }
+                            }
 
-                        /**
-                         * Index IDs vs. actual IDs
-                         *
-                         * Internally, our IDs are just a pointer
-                         * to an entry in the XML (from 0 to infinity).
-                         *
-                         * Then, each XML has an actual id property which
-                         * points to a file. Keep this in mind.
-                         *
-                         * Index IDs (indices) change as entries are deleted.
-                         * Actual IDs don't.
-                         */
-                        function load_upload($id)
-                        {
-                            global $uploads;
+                            switch (trim(strtolower(get("a")))) {
 
-                            if (is_numeric($id)) {
-                                return $uploads->file[(int)$id];
-                            } else {
-                                return false;
+                                case "view":
+
+                                    // index ID, not actual ID
+                                    $id = get("id");
+                                    $upload_entry = load_upload($id);
+
+                                    if ($upload_entry) {
+
+                                        echo '<h3>' . $upload_entry->name . '</h3>';
+                                        echo '<p><h4>Email</h4>' . $upload_entry->email . '</p>';
+                                        echo '<p><h4>Instructions</h4>' . $upload_entry->message . '</p>';
+
+                                        echo '<p><h4>File</h4>';
+
+                                        if (is_file("../db/uploads/" . $upload_entry->id . ".pdf")) {
+                                            echo '<a href="?a=download&id=' . $id . '">Download</a>'
+                                                . ' &bull; '
+                                                . '<a onclick="return confirm(\'Permanently delete this file?\\n\\nNote: the entry will be preserved for your records.\');" '
+                                                . 'href="?a=delete&id=' . $id . '">Delete</a>';
+                                        } else {
+                                            echo 'The PDF no longer exists.';
+                                        }
+
+                                        echo '</p>';
+
+                                        echo '<p><a href="?=">&lsaquo; Back</a></p>';
+
+
+                                    } else {
+                                        echo '<p>Item not found. Time to go chase some zombies.</p>'
+                                            . '<p><a href="?">&lsaquo; Back</a></p>';
+                                    }
+
+                                    break;
+
+                                case "download":
+
+                                    // index ID, not actual ID
+                                    $id = get("id");
+                                    $upload_entry = load_upload($id);
+
+                                    if ($upload_entry) {
+                                        $pdf_path = "../db/uploads/" . $upload_entry->id . ".pdf";
+
+                                        if (is_file($pdf_path)) {
+                                            ob_end_clean();
+
+                                            header("Content-Type: application/pdf");
+                                            header('Content-Disposition: attachment; filename=' . $upload_entry->name);
+                                            // actual ID
+                                            readfile($pdf_path);
+                                        } else {
+                                            echo '<p>File not found</p>';
+                                        }
+
+                                        die;
+                                    } else {
+                                        echo '<p>Entry not found</p>';
+                                    }
+
+                                    break;
+
+                                case "delete":
+
+                                    $id = get("id");
+                                    $upload_entry = load_upload($id);
+
+                                    if ($upload_entry) {
+
+                                        $to_delete = "../db/uploads/" . $upload_entry->id . ".pdf";
+                                        // unset($upload_entry[0]);
+
+                                        if (unlink($to_delete)/* && $uploads->asXML("../db/uploads/db.xml")*/) {
+                                            echo '<p>File deleted.</p>'
+                                                . '<p><a href="?">&lsaquo; Back</a></p>';
+                                        } else {
+                                            echo '<p>Error deleting entry.</p>'
+                                                . '<p><a href="?">&lsaquo; Back</a></p>';
+                                        }
+                                    } else {
+                                        echo '<p>Invalid entry.</p>'
+                                            . '<p><a href="?">&lsaquo; Back</a></p>';
+                                    }
+
+                                    break;
+
+                                default:
+                                    $upload_count = 0;
+                                    ?>
+                                    <table id="uploads-table" class="tablesorter">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Email</th>
+                                                <th>Name</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                foreach ($uploads as $upload) {
+                                                    $upload_count++;
+
+                                                    echo '<tr class="' . (is_file("../db/uploads/" . $upload->id . ".pdf") ? "" : "strike")
+                                                        . '" data-href="?a=view&id=' . ($upload_count - 1) . '"><td>' . $upload_count . '</td>'
+                                                        . '<td>' . $upload->email . '</td><td>' . $upload->name . '</td></tr>';
+                                                }
+
+                                                if ($upload_count == 0) {
+                                                    echo '<tr><td>No uploads found!</td></tr>';
+                                                }
+                                            ?>
+
+                                        </tbody>
+                                    </table>
+                                    <p>
+                                        <em>PDFs for items in red have been deleted.</em>
+                                    </p>
+                                    <?php
+
+                                    break;
                             }
                         }
-
-                        switch (trim(strtolower(get("a")))) {
-
-                            case "view":
-
-                                // index ID, not actual ID
-                                $id = get("id");
-                                $upload_entry = load_upload($id);
-
-                                if ($upload_entry) {
-
-                                    echo '<h3>' . $upload_entry->name . '</h3>';
-                                    echo '<p><h4>Email</h4>' . $upload_entry->email . '</p>';
-                                    echo '<p><h4>Instructions</h4>' . $upload_entry->message . '</p>';
-
-                                    echo '<p><h4>File</h4>';
-
-                                    if (is_file("../db/uploads/" . $upload_entry->id . ".pdf")) {
-                                        echo '<a href="?a=download&id=' . $id . '">Download</a>'
-                                            . ' &bull; '
-                                            . '<a onclick="return confirm(\'Permanently delete this file?\\n\\nNote: the entry will be preserved for your records.\');" '
-                                            . 'href="?a=delete&id=' . $id . '">Delete</a>';
-                                    } else {
-                                        echo 'The PDF no longer exists.';
-                                    }
-
-                                    echo '</p>';
-
-                                    echo '<p><a href="?=">&lsaquo; Back</a></p>';
-
-
-                                } else {
-                                    echo '<p>Item not found. Time to go chase some zombies.</p>'
-                                        . '<p><a href="?">&lsaquo; Back</a></p>';
-                                }
-
-                                break;
-
-                            case "download":
-
-                                // index ID, not actual ID
-                                $id = get("id");
-                                $upload_entry = load_upload($id);
-
-                                if ($upload_entry) {
-                                    $pdf_path = "../db/uploads/" . $upload_entry->id . ".pdf";
-
-                                    if (is_file($pdf_path)) {
-                                        ob_end_clean();
-
-                                        header("Content-Type: application/pdf");
-                                        header('Content-Disposition: attachment; filename=' . $upload_entry->name);
-                                        // actual ID
-                                        readfile($pdf_path);
-                                    } else {
-                                        echo '<p>File not found</p>';
-                                    }
-
-                                    die;
-                                } else {
-                                    echo '<p>Entry not found</p>';
-                                }
-
-                                break;
-
-                            case "delete":
-
-                                $id = get("id");
-                                $upload_entry = load_upload($id);
-
-                                if ($upload_entry) {
-
-                                    $to_delete = "../db/uploads/" . $upload_entry->id . ".pdf";
-                                    // unset($upload_entry[0]);
-
-                                    if (unlink($to_delete)/* && $uploads->asXML("../db/uploads/db.xml")*/) {
-                                        echo '<p>File deleted.</p>'
-                                            . '<p><a href="?">&lsaquo; Back</a></p>';
-                                    } else {
-                                        echo '<p>Error deleting entry.</p>'
-                                            . '<p><a href="?">&lsaquo; Back</a></p>';
-                                    }
-                                } else {
-                                    echo '<p>Invalid entry.</p>'
-                                        . '<p><a href="?">&lsaquo; Back</a></p>';
-                                }
-
-                                break;
-
-                            default:
-                                $upload_count = 0;
-                                ?>
-                                <table id="uploads-table" class="tablesorter">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Email</th>
-                                            <th>Name</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            foreach ($uploads as $upload) {
-                                                $upload_count++;
-
-                                                echo '<tr class="' . (is_file("../db/uploads/" . $upload->id . ".pdf") ? "" : "strike")
-                                                    . '" data-href="?a=view&id=' . ($upload_count - 1) . '"><td>' . $upload_count . '</td>'
-                                                    . '<td>' . $upload->email . '</td><td>' . $upload->name . '</td></tr>';
-                                            }
-
-                                            if ($upload_count == 0) {
-                                                echo '<tr><td>No uploads found!</td></tr>';
-                                            }
-                                        ?>
-
-                                    </tbody>
-                                </table>
-                                <p>
-                                    <em>PDFs for items in red have been deleted.</em>
-                                </p>
-                                <?php
-
-                                break;
+                        else {
+                            echo '<p>No files have been uploaded yet. Check back later.</p>';
                         }
                     ?>
                 </div>
