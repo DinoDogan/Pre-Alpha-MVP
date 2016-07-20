@@ -230,7 +230,7 @@
 
                     if ($upload_entry) {
 
-                        $pdf_path = "../db/uploads/' . $upload_entry->id . '.pdf";
+                        $pdf_path = "../db/uploads/" . $upload_entry->id . ".pdf";
 
                         echo $pdf_path;
 
