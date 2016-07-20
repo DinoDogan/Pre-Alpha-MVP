@@ -326,9 +326,10 @@
                 <?php
                     $storage_free = disk_free_space("/");
                     $storage_total = disk_total_space("/");
+                    $storage_used = $storage_total - $storage_free;
 
 
-                    $storage_percent_free = (round($storage_free / $storage_total, 2) * 100);
+                    $storage_percent_free = (round($storage_used / $storage_total, 2) * 100);
                 ?>
 
                 <div style="float: none;margin: 0 auto;" class="c100 p<?php echo $storage_percent_free; ?>">
@@ -342,7 +343,7 @@
                 <p style="text-align: center; margin-top: 20px;">
                     <?php
 
-                        echo round($storage_free / 1073741824) . " of " . round($storage_total / 1073741824) . " GB used";
+                        echo round($storage_used / 1073741824) . " of " . round($storage_total / 1073741824) . " GB used";
                     ?>
                 </p>
             </div>
