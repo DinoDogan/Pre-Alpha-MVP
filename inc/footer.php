@@ -8,9 +8,9 @@
                     <a href="https://www.pinterest.com/MagnificentMktg/" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
                 </div>
                 <div id="footer-links">
-                    <a href="http://www.magnificent.com/">Company</a>
-                    <a href="http://www.magnificent.com/facebook-marketing/">Services</a>
-                    <a href="http://www.magnificent.com/magnificent-stuff/">Blog</a>
+                    <a href="http://www.magnificent.com/" target="_blank">Company</a>
+                    <a href="http://www.magnificent.com/facebook-marketing/" target="_blank">Services</a>
+                    <a href="http://www.magnificent.com/magnificent-stuff/" target="_blank">Blog</a>
                     <a href="tos.php?from=<?php echo rawurlencode($_SERVER["REQUEST_URI"]); ?>">TOS</a>
                 </div>
             </div>
