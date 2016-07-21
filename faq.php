@@ -5,12 +5,10 @@ include "inc/header.php";
 
 <section id="faq">
     <div class="content">
-        <p class="faq-question">Why does water run downhill?</p>
-        <p class="faq-answer">Bacon ipsum dolor amet andouille hamburger jowl prosciutto kevin venison swine meatloaf
-            salami bacon. Andouille cow cupim shoulder, ham hamburger pig chicken. Porchetta capicola tri-tip spare ribs
-            frankfurter alcatra. Ground round ribeye turkey bresaola pork loin prosciutto strip steak doner.</p>
-        <p class="faq-question">What do you call a bear with no teeth?</p>
-        <p class="faq-answer">A gummy bear. </p>
+        <p class="faq-question">What is Magnificent?</p>
+        <p class="faq-answer">Magnificent is an Austin, TX based marketing agency servicing the publishing industry.</p>
+        <p class="faq-question">Why would I want to convert PDFs to WordPress?</p>
+        <p class="faq-answer">Many of our clients have piles of PDFed content -such as magazines, instructional texts, and historically-significant documents- that they would like to publish to their blog for mobile-friendly, accessible-from-anywhere, easy-access by all. That's where we come in. </p>
         <p class="faq-question">Where do animals go when their tails fall off?</p>
         <p class="faq-answer">The retail store.</p>
         <p class="faq-question">What do you call a fake noodle?</p>
