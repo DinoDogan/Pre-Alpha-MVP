@@ -207,7 +207,7 @@
                                         if (is_file("../db/uploads/" . $upload_entry->id . ".pdf")) {
                                             echo '<a href="?a=download&id=' . $id . '">Download</a>'
                                                 . ' &bull; '
-                                                . '<a onclick="return confirm(\'Permanently delete this file?\\n\\nNote: the entry will be preserved for your records.\');" '
+                                                . '<a onclick="return confirm(\'Permanently delete this file?\\n\\nNote: the email and the instructions will be preserved for your records.\');" '
                                                 . 'href="?a=delete&id=' . $id . '">Delete</a>';
                                         } else {
                                             echo 'The PDF no longer exists.';
@@ -311,8 +311,7 @@
 
                                     break;
                             }
-                        }
-                        else {
+                        } else {
                             echo '<p>No files have been uploaded yet. Check back later.</p>';
                         }
                     ?>
@@ -342,7 +341,6 @@
 
                 <p style="text-align: center; margin-top: 20px;">
                     <?php
-
                         echo round($storage_used / 1073741824) . " of " . round($storage_total / 1073741824) . " GB used";
                     ?>
                 </p>
