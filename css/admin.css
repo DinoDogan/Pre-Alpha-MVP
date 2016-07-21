@@ -1,4 +1,4 @@
-@import "../fonts/helveticaneue/";
+@import "../fonts/helveticaneue/index.css";
 
 * {
     -webkit-box-sizing: border-box;
@@ -62,7 +62,7 @@ a {
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 #uploads-table {

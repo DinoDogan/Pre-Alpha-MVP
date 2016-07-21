@@ -96,40 +96,41 @@
 
                             default:
 
-                                ?>
-                                <table id="uploads-table" class="tablesorter">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Email</th>
-                                            <th>Name</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                if (sizeof($uploads_db->db) != 0) {
+                                    ?>
+                                    <table id="uploads-table" class="tablesorter">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Email</th>
+                                                <th>Name</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
 
-                                            $upload_count = 0;
+                                                $upload_count = 0;
 
-                                            foreach ($uploads_db->db as $upload) {
+                                                foreach ($uploads_db->db as $upload) {
 
-                                                echo '<tr class="' . (is_file($uploads_db->get_file_path($upload_count)) ? "" : "strike")
-                                                    . '" data-href="?a=view&id=' . ($upload_count) . '"><td>' . ($upload_count + 1) . '</td>'
-                                                    . '<td>' . $upload->email . '</td><td>' . $upload->name . '</td></tr>';
+                                                    echo '<tr class="' . (is_file($uploads_db->get_file_path($upload_count)) ? "" : "strike")
+                                                        . '" data-href="?a=view&id=' . ($upload_count) . '"><td>' . ($upload_count + 1) . '</td>'
+                                                        . '<td>' . $upload->email . '</td><td>' . $upload->name . '</td></tr>';
 
-                                                $upload_count++;
-                                            }
+                                                    $upload_count++;
+                                                }
+                                            ?>
 
-                                            if ($upload_count == 0) {
-                                                echo '<tr><td>No uploads found!</td></tr>';
-                                            }
-                                        ?>
-
-                                    </tbody>
-                                </table>
-                                <p>
-                                    <em>PDFs for items in red have been deleted.</em>
-                                </p>
-                                <?php
+                                        </tbody>
+                                    </table>
+                                    <p>
+                                        <em>PDFs for items in red have been deleted.</em>
+                                    </p>
+                                    <?php
+                                }
+                                else {
+                                    echo '<p>No files have been uploaded yet. Check back later.</p>';
+                                }
 
                                 break;
                         }
