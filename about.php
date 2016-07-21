@@ -9,9 +9,9 @@ include "inc/header.php"; ?>
                 adjective:
             </p>
             <p>
-                1. impressively beautiful, elaborate, or extravagant; striking.<br>
-                2. very good; excellent. <br>
-                3. extract and publish PDFs to WordPress.
+                1. impressively beautiful, elaborate, or extravagant; striking<br>
+                2. very good; excellent<br>
+                3. extract PDF and send to WordPress
             </p>
         </div>
     </section>
