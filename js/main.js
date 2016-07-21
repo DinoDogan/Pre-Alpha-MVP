@@ -358,8 +358,8 @@ function bootstrapModal(args) {
 
             var $modalFooter = $("<div>", {
                 class: "modal-footer xs",
-                html: '<div class="col-xs-6 text-left"><a href="mailto:support@magnificent.com">support@magnificent.com</a></div>'
-                + '<div class="col-xs-6 text-right"><a href="contact.php" target="_blank">magnificent.com/support</a></div>'
+                html: '<div class="col-xs-6 text-left"><a href="mailto:support@magnificent.com">Email Support</a></div>'
+                + '<div class="col-xs-6 text-right"><a href="contact.php" target="_blank">Contact Support</a></div>'
             });
 
             // build
