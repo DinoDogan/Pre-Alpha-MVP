@@ -19,7 +19,7 @@ if (trim($name) != "") {
         if (trim($message) != "") {
             $headers = 'From: ' . $name . ' <' . $email . '>\r\n';
 
-            if (mail("slogar.sheng@gmail.com", "Magnificent Query", $message, $headers) !== false) {
+            if (mail("dino.dogan@gmail.com", "Magnificent Query", $message, $headers) !== false) {
                 $output["message"] = "Thanks! Your request was sent.";
             } else {
                 $output["error"] = "Error sending email. Please try again.";
