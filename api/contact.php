@@ -17,7 +17,7 @@ if (trim($name) != "") {
     if (preg_match("/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/", $email)) {
 
         if (trim($message) != "") {
-            $headers = 'From: ' . $name . ' <' . $email . '>\r\n';
+            $headers = "From: " . $name . " <" . $email . ">\r\n";
 
             if (mail("dino.dogan@gmail.com", "Magnificent Query", $message, $headers) !== false) {
                 $output["message"] = "Thanks! Your request was sent.";
