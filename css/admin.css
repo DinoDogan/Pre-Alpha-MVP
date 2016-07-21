@@ -1,0 +1,130 @@
+@import "../fonts/helveticaneue/";
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font: 14px "Helvetica Neue",  sans-serif;
+    background: #eee;
+    cursor: default;
+}
+
+h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-weight: 100;
+    padding: 25px 60px;
+    background: #13537e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    margin: 20px 0;
+}
+
+a {
+    color: #13537e;
+}
+
+#cards {
+    width: 800px;
+    margin: 10px auto;
+    margin-top: 120px;
+}
+
+.card {
+    background: #fff;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    margin: 30px 0;
+}
+
+.card:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.card > * {
+    padding: 30px 40px;
+}
+
+.card-title {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+#uploads-table {
+    text-align: left;
+    border-spacing: 0;
+    font-size: 0;
+    width: 100%;
+}
+
+#uploads-table tr {
+    cursor: pointer;
+    display: block;
+}
+
+#uploads-table td,
+#uploads-table th {
+    padding: 8px 20px;
+    display: inline-block;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#uploads-table td:nth-child(1),
+#uploads-table th:nth-child(1) {
+    width: 10%;
+}
+
+#uploads-table td:nth-child(2),
+#uploads-table th:nth-child(2) {
+    width: 30%;
+}
+
+#uploads-table td:nth-child(3),
+#uploads-table th:nth-child(3) {
+    width: 60%;
+}
+
+/* head */
+
+#uploads-table > thead {
+    display: block;
+}
+
+#uploads-table th {
+    cursor: pointer;
+}
+
+/* body */
+
+#uploads-table > tbody {
+    max-height: 300px;
+    overflow: auto;
+    display: block;
+}
+
+#uploads-table tr.strike {
+    /*text-decoration: line-through;*/
+    color: red;
+}
+
+#uploads-table tr:hover {
+    background: #eee
+}

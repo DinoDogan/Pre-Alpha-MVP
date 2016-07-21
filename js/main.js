@@ -93,7 +93,7 @@ function bootstrapModal(args) {
  */
 (function () {
     var $header = $("#header");
-    
+
     $("#header-nav").on("show.bs.collapse", function () {
         $header.addClass("nav-open");
     }).on("hide.bs.collapse", function () {
@@ -192,9 +192,10 @@ function bootstrapModal(args) {
         $fileInput.click();
 
         $fileInput.change(function () {
-            files = this.files;
 
             var validationComplete = true;
+
+            files = this.files;
 
             for (var i = 0; i < files.length; i++) {
 
@@ -237,6 +238,13 @@ function bootstrapModal(args) {
             });
 
             e.stopPropagation();
+        }
+    });
+
+    // allow enter key on email input
+    $emailInput.keydown(function (e) {
+        if (e.keyCode == 13) {
+            $("#upl-modal2-next").click();
         }
     });
 
