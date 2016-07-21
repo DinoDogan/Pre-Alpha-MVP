@@ -6,6 +6,15 @@
 
     <title><?php echo(isset($title) ? "$title | Magnificent" : "Magnificent - Convert PDFs to Blog Posts"); ?></title>
 
+    <!--
+               _____                        .__  _____.__                     __
+              /     \ _____     ____   ____ |__|/ ____\__| ____  ____   _____/  |_
+             /  \ /  \\__  \   / ___\ /    \|  \   __\|  |/ ___\/ __ \ /    \   __\
+            /    Y    \/ __ \_/ /_/  >   |  \  ||  |  |  \  \__\  ___/|   |  \  |
+            \____|__  (____  /\___  /|___|  /__||__|  |__|\___  >___  >___|  /__|
+                   \/     \//_____/      \/                  \/    \/     \/
+    -->
+
     <meta name="description"
           content="Magnificent converts your PDFs into a blog post with a simple click of a button. Try it out today.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
