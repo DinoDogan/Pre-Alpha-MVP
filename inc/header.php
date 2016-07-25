@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+<!-- Check to see if the page should be using a theme (home-style). If yes, apply. If not, ignore. -->
 <body<?php echo(isset($home_style) ? ' class="home-style"' : ''); ?>>
+
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -36,7 +38,6 @@
 <div id="header">
     <div class="content">
         <nav class="navbar navbar-default text">
-
             <div class="navbar-header" id="header-brand">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#header-nav" aria-expanded="false">
@@ -54,7 +55,7 @@
             <div class="collapse navbar-collapse" id="header-nav">
                 <ul class="nav navbar-nav navbar-right" id="header-links">
                     <?php
-                    // strip stuff down so we don't have to worry about serving
+                    // strip URL down so we don't have to worry about serving
                     // project from different directories.
                     $script_name = pathinfo($_SERVER["SCRIPT_NAME"], PATHINFO_FILENAME);
                     ?>

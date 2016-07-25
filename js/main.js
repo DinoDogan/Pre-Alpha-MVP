@@ -1,5 +1,5 @@
 /**
- * jQuery Ajax w/ Progress
+ * jQuery Ajax shows Progress on upload
  */
 $.customAjax = function (params) {
 
@@ -89,7 +89,7 @@ function bootstrapModal(args) {
 }
 
 /**
- * Nav bar
+ * Nav bar turns white on mobile when open
  */
 (function () {
     var $header = $("#header");
@@ -102,7 +102,7 @@ function bootstrapModal(args) {
 }());
 
 /**
- * Hero cloud carousel
+ * Hero cloud carousel shows 3 options on page
  */
 
 (function () {
@@ -333,7 +333,7 @@ function bootstrapModal(args) {
     });
 
     //
-    // HELP DOCUMENTATION
+    // HELP section for modal overlays
     //
     $(".modal-header-hint").each(function () {
         var $this = $(this);
