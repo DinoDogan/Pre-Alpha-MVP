@@ -11,22 +11,22 @@
                     <a href="http://www.magnificent.com/" target="_blank">Company</a>
                     <a href="http://www.magnificent.com/facebook-marketing/" target="_blank">Services</a>
                     <a href="http://www.magnificent.com/magnificent-stuff/" target="_blank">Blog</a>
-                    <a href="tos.php?from=<?php echo rawurlencode($_SERVER["REQUEST_URI"]); ?>">TOS</a>
+                    <a href="/tos.php?from=<?php echo rawurlencode($_SERVER["REQUEST_URI"]); ?>">TOS</a>
                 </div>
             </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/jquery.easing.min.js"></script>
+        <script src="/js/jquery.easing.min.js"></script>
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
                 integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
                 crossorigin="anonymous"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/plugins.js"></script>
+        <script src="/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
