@@ -24,6 +24,9 @@
 
                     $uploadsdb = new UploadsDB();
 
+                    // array of filenames for emailing
+                    $filenames = array();
+
                     foreach ($_FILES["files"]["name"] as $i => $name) {
 
                         $file = array(
@@ -41,7 +44,7 @@
 
                                 if (move_uploaded_file($file["tmp_name"], $upload_path) !== false) {
                                     $uploadsdb->add_file($file["name"], $email, $message);
-
+                                    array_push($filenames, $file["name"]);
                                 } else {
                                     $output["error"] .= "Error uploading file. ";
                                 }
@@ -82,6 +85,36 @@
 
                     // save
                     $uploadsdb->save();
+
+                    $email_to = 'dino.dogan@gmail.com';
+                    $email_subject = 'New PDFs Uploaded - MagAdmin';
+
+                    // message
+                    $email_message = '<html><head><title>' . $email_subject . '</title></head><body>'
+                        . '<h1>New Uploads</h1>'
+                        . '<p>The following files have been uploaded to Magnificent by <em>' . $email . '</em>:</p>'
+                        . '<ul>';
+
+                    foreach ($filenames as $i => $filename) {
+                        $email_message .= "<li>$filename</li>";
+                    }
+
+                    $email_message .= '</ul>'
+                        . '<p><a href="http://' . $_SERVER["HTTP_HOST"] . '/admin/">View the new uploads &rsaquo;</a></p>'
+                        . '<p><small><em>You\'re receiving this email because you\'ve been designated '
+                        . 'as the server admin. To unsubscribe, delete your email account.</em></small></p>'
+                        . '</body></html>';
+
+                    // To send HTML mail, the Content-type header must be set
+                    $email_headers = 'MIME-Version: 1.0' . "\r\n";
+                    $email_headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                    // Additional headers
+                    $email_headers .= 'To: Server Admin <' . $email_to . '>' . "\r\n";
+                    $email_headers .= 'From: Magnificent <noreply@app.magnificent.com>' . "\r\n";
+
+                    // Mail it
+                    mail($email_to, $email_subject, $email_message, $email_headers);
 
                 } else {
                     $output["error"] .= "File size exceeded or file not uploaded. ";

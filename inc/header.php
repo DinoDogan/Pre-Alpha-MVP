@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <!-- Check to see if the page should be using a theme (home-style). If yes, apply. If not, ignore. -->
 <body<?php echo(isset($home_style) ? ' class="home-style"' : ''); ?>>
@@ -59,11 +59,11 @@
                     // project from different directories.
                     $script_name = pathinfo($_SERVER["SCRIPT_NAME"], PATHINFO_FILENAME);
                     ?>
-                    <li><a href="about.php"<?php echo($script_name == "about" ? ' class="bold"' : ''); ?>>About</a>
+                    <li><a href="/about.php"<?php echo($script_name == "about" ? ' class="bold"' : ''); ?>>About</a>
                     </li>
-                    <li><a href="faq.php"<?php echo($script_name == "faq" ? ' class="bold"' : ''); ?>>FAQ</a></li>
+                    <li><a href="/faq.php"<?php echo($script_name == "faq" ? ' class="bold"' : ''); ?>>FAQ</a></li>
                     <li>
-                        <a href="contact.php"<?php echo($script_name == "contact" ? ' class="bold"' : ''); ?>>Contact</a>
+                        <a href="/contact.php"<?php echo($script_name == "contact" ? ' class="bold"' : ''); ?>>Contact</a>
                     </li>
                 </ul>
             </div>

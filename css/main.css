@@ -1,9 +1,9 @@
 /* ==========================================================================
    Font imports
    ========================================================================== */
-@import "../fonts/helveticaneue/index.css";
-@import "../fonts/avenirnextpro/index.css";
-@import "../fonts/bevan/index.css";
+@import "/fonts/helveticaneue/index.css";
+@import "/fonts/avenirnextpro/index.css";
+@import "/fonts/bevan/index.css";
 
 /* ==========================================================================
    Generic
