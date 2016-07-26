@@ -256,7 +256,7 @@
   left: 0;
   top: 0;
   width: 5em;
-  line-height: 5em;
+  line-height: 5.33em;
   font-size: 0.2em;
   color: #cccccc;
   display: block;
@@ -1009,7 +1009,7 @@
 }
 .c100:hover > span {
   width: 3.33em;
-  line-height: 3.33em;
+  line-height: 3.65em;
   font-size: 0.3em;
   color: #307bbb;
 }
