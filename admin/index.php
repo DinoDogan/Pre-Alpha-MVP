@@ -4,12 +4,11 @@
 <html>
     <head>
         <title>Magnificent Admin Portal</title>
-        <link rel="stylesheet" href="../css/circle-progress.css" type="text/css">
-        <link rel="stylesheet" href="../css/admin.css" type="text/css">
+        <link rel="stylesheet" href="/css/circle-progress.css" type="text/css">
+        <link rel="stylesheet" href="/css/admin.css" type="text/css">
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script type="text/javascript" src="../js/jquery.tablesorter.min.js"></script>
+        <script src="/js/vendor/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/jquery.tablesorter.min.js"></script>
     </head>
     <body>
         <h1>Magnificent Admin</h1>
@@ -127,8 +126,7 @@
                                         <em>PDFs for items in red have been deleted.</em>
                                     </p>
                                     <?php
-                                }
-                                else {
+                                } else {
                                     echo '<p>No files have been uploaded yet. Check back later.</p>';
                                 }
 
