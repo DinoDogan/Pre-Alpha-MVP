@@ -1,8 +1,8 @@
 /* ==========================================================================
    Font imports
    ========================================================================== */
+@import "/fonts/fontawesome/index.css";
 @import "/fonts/helveticaneue/index.css";
-@import "/fonts/avenirnextpro/index.css";
 @import "/fonts/bevan/index.css";
 
 /* ==========================================================================
@@ -12,18 +12,16 @@
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-
     -webkit-transition: .4s ease;
     -webkit-transition-property: color, border-color, visibility, background-color, box-shadow,
     -webkit-transform;
-
     transition: .4s ease;
     transition-property: color, border-color, visibility, background-color, box-shadow,
     transform;
 }
 
 html {
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica Neue", sans-serif;
     font-size: 18px;
     font-weight: 300;
     height: 100%;
@@ -53,44 +51,19 @@ body.home-style {
     text-shadow: none;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
 input,
 textarea {
     display: block;
-    text-align: center;
+    text-align: left;
     background: #f6f8fa;
     border: 1px solid #efefef;
+    outline: none;
     font: inherit;
     font-size: 1rem;
     font-weight: 300;
     width: 100%;
     padding: 12px 14px;
     margin: 8px 0;
-    outline: none;
-    text-align: left;
 }
 
 textarea {
@@ -163,54 +136,6 @@ section {
 }
 
 /*
- * Hide visually and from screen readers
- */
-
-.hidden {
-    display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
  * Clearfix: contain floats
  *
  * For modern browsers
@@ -240,32 +165,31 @@ section {
 .hint:after {
     visibility: hidden;
     opacity: 0;
-
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
-
     -webkit-transition: .2s ease;
     transition: .2s ease;
 }
 
-.hint:before {
-    position: absolute;
-    top: 100%;
-    left: 20px;
-    font-size: .7rem;
-    color: #fff;
-    background: #b12424;
-    padding: 6px 12px;
-    display: block;
-    border-radius: 4px;
-
-    content: attr(data-hint);
-}
-
+.hint:before,
 .hint:after {
     content: "";
     position: absolute;
     top: 100%;
+}
+
+.hint:before {
+    left: 20px;
+    padding: 6px 12px;
+    display: block;
+    border-radius: 4px;
+    font-size: .7rem;
+    color: #fff;
+    background: #b12424;
+    content: attr(data-hint);
+}
+
+.hint:after {
     left: 30px;
     margin-top: -16px;
     border: 8px solid transparent;
@@ -276,7 +200,6 @@ section {
 .hint.hint--visible:after {
     visibility: visible;
     opacity: 1;
-
     -webkit-transform: none;
     transform: none;
 }
@@ -341,9 +264,7 @@ section {
     float: right;
     font-size: 23px;
     display: inline-block;
-
     color: #ddd;
-
     cursor: pointer;
 }
 
@@ -372,7 +293,6 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-
     -webkit-animation: fade-in .2s ease;
     animation: fade-in .2s ease;
 }
@@ -389,20 +309,18 @@ section {
 
 .btn {
     background: #13537e;
-    border-radius: 0;
-    text-shadow: none;
-    color: #fff;
     border: none;
+    color: #fff;
+    border-radius: 0;
     box-shadow: none;
-    padding: 9px 10px;
-    text-align: center;
-
     font-size: .9rem;
     font-weight: 300;
-
-    height: 43px;
     line-height: 28px;
+    text-shadow: none;
+    text-align: center;
+    height: 43px;
     min-width: 120px;
+    padding: 9px 10px;
 }
 
 .btn:active, .btn:focus {
@@ -423,7 +341,6 @@ section {
     z-index: 1000;
     background: #fff;
     border-bottom: 1px solid #eee;
-    /*padding: 30px 0;*/
 }
 
 body.home-style #header {
@@ -445,7 +362,7 @@ body.home-style .navbar-toggle .icon-bar {
 }
 
 #logo {
-    font-family: Bevan, sans-serif;
+    font-family: "Bevan", sans-serif;
     font-size: 37px;
     color: #4682b4;
     margin-left: -2px;
@@ -556,6 +473,7 @@ body.home-style #footer-social > a:hover > i {
 
 #home {
     position: relative;
+    height: 550px;
 }
 
 .home-background {
@@ -624,10 +542,8 @@ body.home-style #footer-social > a:hover > i {
     font-size: .8rem;
     top: 60px;
     left: 72px;
-
     white-space: nowrap;
     overflow: hidden;
-
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
 }
@@ -663,7 +579,6 @@ body.home-style #footer-social > a:hover > i {
     top: 50%;
     line-height: 30px;
     margin-top: -15px;
-
     white-space: nowrap;
     overflow: hidden;
 }
@@ -693,13 +608,10 @@ body.home-style #footer-social > a:hover > i {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     margin: 0 5px;
-
     width: 10px;
     height: 10px;
-
     -webkit-transition: background-color 1.2s ease;
     transition: background-color 1.2s ease;
-
     cursor: pointer;
 }
 
@@ -727,7 +639,7 @@ body.home-style #footer-social > a:hover > i {
 
 .faq-question:before,
 .faq-answer:before {
-    font-family: Bevan, sans-serif;
+    font-family: "Bevan", sans-serif;
     font-size: 32px;
     position: absolute;
     top: -19px;
@@ -809,7 +721,6 @@ body.home-style #footer-social > a:hover > i {
 #contact-form textarea {
     width: 100%;
     height: 300px;
-    /*resize: both;*/
 }
 
 #contact-form button {
@@ -831,10 +742,8 @@ body.home-style #footer-social > a:hover > i {
     right: 0;
     bottom: 0;
     background: #fff;
-
     -webkit-transition: .5s ease;
     transition: .5s ease;
-
     opacity: 0;
     visibility: hidden;
 }
@@ -857,7 +766,6 @@ body.home-style #footer-social > a:hover > i {
     text-align: center;
     font-size: 2rem;
     font-weight: 200;
-
     margin-top: -85px;
 }
 
@@ -916,11 +824,6 @@ body.home-style #footer-social > a:hover > i {
     margin-left: 20px;
 }
 
-#upl-modals .modal-body {
-    /*height: 300px;*/
-    /*overflow: auto;*/
-}
-
 #upl-modal4-header {
     position: relative;
 }
@@ -940,10 +843,8 @@ body.home-style #footer-social > a:hover > i {
     bottom: 0;
     background: #004370;
     width: 0%;
-
     opacity: 0;
     visibility: hidden;
-
     -webkit-transition: visibility 1s ease 1s, opacity 1s ease 1s, width 2s ease;
     transition: visibility 1s ease 1s, opacity 1s ease 1s, width 2s ease;
 }
@@ -951,7 +852,6 @@ body.home-style #footer-social > a:hover > i {
 #upl-modal4-progress-bar.is-visible {
     opacity: 1;
     visibility: visible;
-
     -webkit-transition: visibility 1s ease, opacity 1s ease, width 2s ease;
     transition: visibility 1s ease, opacity 1s ease, width 2s ease;
 }
@@ -975,23 +875,6 @@ body.home-style #footer-social > a:hover > i {
 #upl-modal5-icons > a:hover > i {
     background-color: #ddd;
     color: #222;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
@@ -1112,7 +995,7 @@ body.home-style #footer-social > a:hover > i {
     }
 
     section {
-        padding: 151px 0 214px 0!important;
+        padding: 151px 0 214px 0 !important;
     }
 
     #footer {
@@ -1158,17 +1041,14 @@ body.home-style #footer-social > a:hover > i {
         display: block;
         width: 100%;
         margin: 30px 0;
-
         -webkit-transform: rotateZ(180deg);
         transform: rotateZ(180deg);
     }
 
     .call-to-action > .cloud-arrow {
         display: block;
-
         -webkit-tranform: rotateZ(90deg);
         transform: rotateZ(90deg);
-
         padding: 50px 0;
     }
 

@@ -32,11 +32,10 @@
     </div>
 </section>
 
+<!----------------------------------------------------------------------------------------
+    Upload File Modals
+----------------------------------------------------------------------------------------->
 <div id="upl-modals">
-
-    <!----------------------------------------------------------------------------------------
-        Upload File Modals
-    ----------------------------------------------------------------------------------------->
 
     <!--
         Modal 1 (Choose files)
@@ -200,7 +199,6 @@
         </div>
     </div>
 
-
     <!--
         Modal 5 (Upload Progress)
     -->
@@ -217,19 +215,19 @@
                     <div class="row">
                         <div class="col-xs-12" id="upl-modal5-icons">
                             <a target="_blank" title="Share on Facebook"
-                               href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fmagnificent.com%2Fpdf2wp%2F"><i
+                               href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fapp.magnificent.com%2F"><i
                                     class="fa fa-facebook"></i></a>
                             <a target="_blank" title="Share on Twitter"
-                               href="http://www.twitter.com/share?url=http%3A%2F%2Fmagnificent.com%2Fpdf2wp%2F"><i
+                               href="http://www.twitter.com/share?url=http%3A%2F%2Fapp.magnificent.com%2F"><i
                                     class="fa fa-twitter"></i></a>
                             <a target="_blank" title="Share on Google+"
-                               href="https://plus.google.com/share?url=http%3A%2F%2Fmagnificent.com%2Fpdf2wp%2F"><i
+                               href="https://plus.google.com/share?url=http%3A%2F%2Fapp.magnificent.com%2F"><i
                                     class="fa fa-google-plus"></i></a>
                             <a target="_blank" title="Share on Pinterest"
-                               href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fmagnificent.com%2Fpdf2wp%2F"><i
+                               href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fapp.magnificent.com%2F"><i
                                     class="fa fa-pinterest"></i></a>
                             <a target="_blank" title="Share on LinkedIn"
-                               href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fmagnificent.com%2Fpdf2wp%2F"><i
+                               href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fapp.magnificent.com%2F"><i
                                     class="fa fa-linkedin"></i></a>
                             <a target="_blank" title="Share on Product Hunt"
                                href="https://www.producthunt.com/tech/new"><i
@@ -246,6 +244,8 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="/js/hero.js?v=1.0"></script>
 
 <!-- Get footer from footer.php -->
 

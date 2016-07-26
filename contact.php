@@ -1,6 +1,6 @@
 <?php
-$title = "Contact Us";
-include "inc/header.php"; ?>
+    $title = "Contact Us";
+    include "inc/header.php"; ?>
 
     <section id="contact">
         <div class="content">
@@ -19,5 +19,32 @@ include "inc/header.php"; ?>
             </form>
         </div>
     </section>
+
+    <script type="text/javascript">
+        (function () {
+            var $contactForm = $("#contact-form");
+
+            $contactForm.submit(function (e) {
+
+                $.ajax({
+                    method: $contactForm.attr("data-method"),
+                    url: $contactForm.attr("data-action"),
+                    dataType: "JSON",
+                    data: $contactForm.serialize()
+                }).done(function (json) {
+                    if (!json.error) {
+                        $contactForm.addClass("has-success");
+                    }
+                    else {
+                        alert(json.error);
+                    }
+                }).error(function () {
+
+                });
+
+                e.preventDefault();
+            });
+        }());
+    </script>
 
 <?php include "inc/footer.php"; ?>
