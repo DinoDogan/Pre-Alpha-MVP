@@ -4,7 +4,6 @@ if (isset($title))
 else
     $title = "Magnificent - Convert PDFs to Blog Posts";
 
-
 if (!isset($meta_keywords))
     $meta_keywords = "";
 
