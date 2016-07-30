@@ -88,7 +88,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <i class="modal-header-hint fa fa-question-circle-o"
-                       data-help="<p>Make sure you are uploading a Native PDF, not a scanned PDF. Native PDFs are generated from a software application and preserve the internal structure of the information in your document. Scanned PDFs are just snap-shots of the document.</p>"></i>
+                       data-help="<p>Please enter a valid email address and we will send you your completed files.</p>"></i>
                     <h4 class="modal-title">Enter Your Email</h4>
                 </div>
                 <div class="modal-body">
