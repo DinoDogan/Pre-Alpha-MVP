@@ -87,7 +87,7 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <i class="modal-header-hint fa fa-question-circle-o"></i>
+                    <i class="modal-header-hint fa fa-question-circle-o">Please enter a valid email address and we will send you your completed files.</i>
                     <h4 class="modal-title">Enter Your Email</h4>
                 </div>
                 <div class="modal-body">
