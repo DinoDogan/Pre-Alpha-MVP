@@ -46,7 +46,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <i class="modal-header-hint fa fa-question-circle-o"
-                       data-help="<p>containing Lorem Ipsum passages, and more Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>"></i>
+                       data-help="<p>Make sure you are uploading a Native PDF, not a scanned PDF. Native PDFs are generated from a software application and preserve the internal structure of the information in your document. Scanned PDFs are just snap-shots of the document.</p>"></i>
                     <h4 class="modal-title">Upload to Magnificent</h4>
                 </div>
                 <div class="modal-body">
@@ -130,8 +130,8 @@
                 <div class="modal-body">
 
                     <div class="row">
-                        <textarea placeholder="Enter your extraction desires here..." autofocus id="upl-modal3-input"
-                                  maxlength="500"></textarea>
+                        <textarea placeholder="Tell us what you would like us to do with your PDF... </br>
+                                                Example: Extract the text and images from pages 4 and 5" autofocus id="upl-modal3-input" maxlength="500"></textarea>
                     </div>
 
                     <div class="row text-right" style="margin-top: 40px;">
