@@ -125,14 +125,17 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <i class="modal-header-hint fa fa-question-circle-o"></i>
+                    <i class="modal-header-hint fa fa-question-circle-o"
+                       data-help="<p>Your PDF will be extracted and formated for easy-publishing on your WordPress
+                            website. It takes 24 hrs for our machine-learning engine to explicate the contents
+                            of your PDF, interpret your instructions, and format the output. Each outcome is
+                            then checked by a real, live person before the results are sent to you.</p>"></i>
                     <h4 class="modal-title">Special Instructions</h4>
                 </div>
                 <div class="modal-body">
 
                     <div class="row">
-                        <textarea placeholder="Tell us what you would like us to do with your PDF... </br>
-                                                Example: Extract the text and images from pages 4 and 5" autofocus id="upl-modal3-input" maxlength="500"></textarea>
+                        <textarea placeholder="Tell us what you would like us to do with your PDF. For example: Extract the text and images from pages 4 and 5" autofocus id="upl-modal3-input" maxlength="500"></textarea>
                     </div>
 
                     <div class="row text-right" style="margin-top: 40px;">
