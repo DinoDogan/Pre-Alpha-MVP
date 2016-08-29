@@ -122,15 +122,17 @@ function bootstrapModal(args) {
     return modal;
 }
 
-/**
- * Nav bar turns white on mobile when open
- */
-(function () {
-    var $header = $("#header");
+$(document).ready(function () {
+    /**
+     * Nav bar turns white on mobile when open
+     */
+    (function () {
+        var $header = $("#header");
 
-    $("#header-nav").on("show.bs.collapse", function () {
-        $header.addClass("nav-open");
-    }).on("hide.bs.collapse", function () {
-        $header.removeClass("nav-open");
-    });
-}());
+        $("#header-nav").on("show.bs.collapse", function () {
+            $header.addClass("nav-open");
+        }).on("hide.bs.collapse", function () {
+            $header.removeClass("nav-open");
+        });
+    }());
+});
